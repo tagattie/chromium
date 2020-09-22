@@ -1,28 +1,27 @@
-freebsd-chromium
-================
+# freebsd-chromium
 
-Chromium port for FreeBSD
+This repository exists to manage the FreeBSD Chromium port.  [Google will no
+longer accept FreeBSD/OpenBSD
+patches](https://groups.google.com/a/chromium.org/g/chromium-dev/c/b57hDs8yE4g/m/4yppcLc9BQAJ),
+so we use this repository to manage our local changes.  It was cloned from
+git@github.com:gliaskos/freebsd-chromium.git.
 
-There is a Wiki page at
-* https://wiki.freebsd.org/Chromium
+See
+[here](https://bugs.freebsd.org/bugzilla/buglist.cgi?quicksearch=www%2Fchromium)
+for a list of all known bugs.
 
-For a list of all known bugs, see:
-* https://bugs.freebsd.org/bugzilla/buglist.cgi?quicksearch=www%2Fchromium
-
-When porting Chromium, here are some rules to adhere to. These rules comply
-with upstream Chromium, and in case some other BSD would try using our
-patches, ideally we would have one main codebase for all BSDs or at least
-other projects could use our patches.
+When submitting changes, please adhere to a few guidelines, which comply with
+upstream Chromium guidelines.  This hopefully make it easier to upstream our
+changes if they are ever accepted again and it should make our work useful for
+other projects like OpenBSD.
 
 * GN: Use "is\_bsd", not "is\_freebsd" or some other identifier.
 
 * C++ files: \_bsd.cc, not \_freebsd.cc and \_openbsd.cc. The implementation
 can be divided inside like Chromium developers divide Linux/Android/ChromeOS
 in one .cc file.
+
 * C++ code: generally OS\_BSD, in some cases OS\_SOMEBSD when it is really
 necessary. Never use \_\_FreeBSD\_\_, if OS\_\* is not defined then there is
 a reason for this. In such cases, read BUILD.gn for that target and find out
 how to do it correctly.
-* Python: this needs to be investigated, it is rather unclear now: a lot of
-different calls and approaches already exist in the code.  But fortunately
-it is not very important now.
