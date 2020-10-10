@@ -238,12 +238,6 @@ post-extract-TEST-on:
 	@${MKDIR} ${WRKSRC}/third_party/test_fonts/test_fonts
 	@${MV} ${WRKDIR}/test_fonts ${WRKSRC}/third_party/test_fonts/
 
-post-patch:
-	# XXX nop for www/chromium itself
-	@${REINPLACE_CMD} -e 's|@@PACKAGE@@|chromium|' \
-			-e 's|@@MENUNAME@@|Chromium Web Browser|' \
-			${WRKSRC}/chrome/app/resources/manpage.1.in
-
 post-patch-SNDIO-on:
 	@${MKDIR} ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
 	@${CP} ${FILESDIR}/sndio_output.* ${WRKSRC}/media/audio/sndio
