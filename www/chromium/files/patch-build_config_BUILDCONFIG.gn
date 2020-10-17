@@ -1,4 +1,4 @@
---- build/config/BUILDCONFIG.gn.orig	2019-06-04 18:55:15 UTC
+--- build/config/BUILDCONFIG.gn.orig	2020-10-07 16:38:34 UTC
 +++ build/config/BUILDCONFIG.gn
 @@ -131,10 +131,10 @@ declare_args() {
    is_official_build = false
@@ -44,5 +44,5 @@
  is_win = current_os == "win" || current_os == "winuwp"
 +is_bsd = current_os == "freebsd"
  
+ is_apple = is_ios || is_mac
  is_posix = !is_win && !is_fuchsia
- 

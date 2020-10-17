@@ -1,4 +1,4 @@
---- third_party/crashpad/crashpad/util/misc/capture_context.h.orig	2020-07-07 21:57:56 UTC
+--- third_party/crashpad/crashpad/util/misc/capture_context.h.orig	2020-10-07 16:39:07 UTC
 +++ third_party/crashpad/crashpad/util/misc/capture_context.h
 @@ -21,7 +21,7 @@
  #include <mach/mach.h>
@@ -16,5 +16,5 @@
 -#elif defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA)
 +#elif defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD)
  using NativeCPUContext = ucontext_t;
- #endif  // OS_MACOSX
+ #endif  // OS_APPLE
  

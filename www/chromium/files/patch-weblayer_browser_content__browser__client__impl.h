@@ -1,6 +1,6 @@
---- weblayer/browser/content_browser_client_impl.h.orig	2020-09-08 19:14:28 UTC
+--- weblayer/browser/content_browser_client_impl.h.orig	2020-10-07 16:39:11 UTC
 +++ weblayer/browser/content_browser_client_impl.h
-@@ -111,12 +111,12 @@ class ContentBrowserClientImpl : public content::Conte
+@@ -113,12 +113,12 @@ class ContentBrowserClientImpl : public content::Conte
    void RenderProcessWillLaunch(content::RenderProcessHost* host) override;
    scoped_refptr<content::QuotaPermissionContext> CreateQuotaPermissionContext()
        override;

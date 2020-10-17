@@ -1,8 +1,8 @@
---- cc/test/layer_tree_test.cc.orig	2020-09-08 19:13:57 UTC
+--- cc/test/layer_tree_test.cc.orig	2020-10-07 16:38:34 UTC
 +++ cc/test/layer_tree_test.cc
-@@ -654,7 +654,7 @@ LayerTreeTest::LayerTreeTest(LayerTreeTest::RendererTy
+@@ -665,7 +665,7 @@ LayerTreeTest::LayerTreeTest(TestRendererType renderer
      init_vulkan = true;
-   } else if (renderer_type_ == RENDERER_SKIA_DAWN) {
+   } else if (renderer_type_ == TestRendererType::kSkiaDawn) {
      scoped_feature_list_.InitAndEnableFeature(features::kSkiaDawn);
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
