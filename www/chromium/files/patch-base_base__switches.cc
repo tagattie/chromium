@@ -1,16 +1,16 @@
---- base/base_switches.cc.orig	2020-09-08 19:13:57 UTC
+--- base/base_switches.cc.orig	2020-10-07 16:38:33 UTC
 +++ base/base_switches.cc
 @@ -117,7 +117,7 @@ const char kDisableHighResTimer[] = "disable-highres-t
  const char kDisableUsbKeyboardDetect[]      = "disable-usb-keyboard-detect";
  #endif
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !BUILDFLAG(IS_LACROS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS) && !BUILDFLAG(IS_LACROS)) || defined(OS_BSD)
  // The /dev/shm partition is too small in certain VM environments, causing
  // Chrome to fail or crash (see http://crbug.com/715363). Use this flag to
  // work-around this issue (a temporary directory will always be used to create
-@@ -142,7 +142,7 @@ const char kReachedCodeSamplingIntervalUs[] =
-     "reached-code-sampling-interval-us";
+@@ -152,7 +152,7 @@ const char kForceFieldTrialParams[] = "force-fieldtria
+ 
  #endif
  
 -#if defined(OS_LINUX)
