@@ -1,7 +1,7 @@
 # freebsd-chromium
 
 This repository contains the FreeBSD Chromium port. [Google will no longer accept FreeBSD/OpenBSD
-patches](https://groups.google.com/a/chromium.org/g/chromium-dev/c/b57hDs8yE4g/m/4yppcLc9BQAJ),
+patches](https://groups.google.com/a/chromium.org/d/msg/chromium-dev/b57hDs8yE4g/5tXefZ74AQAJ),
 so we use this repository to manage our local changes.  It was cloned from
 [gliaskos/freebsd-chromium](https://github.com/gliaskos/freebsd-chromium).
 
