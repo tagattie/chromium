@@ -1,5 +1,5 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
-# $FreeBSD: head/www/chromium/Makefile 545308 2020-08-19 10:50:13Z jbeich $
+# $FreeBSD: head/www/chromium/Makefile 552588 2020-10-17 14:48:34Z rene $
 
 PORTNAME=	chromium
 PORTVERSION=	84.0.4147.135
@@ -137,7 +137,7 @@ GN_ARGS+=	google_api_key="AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8" \
 		google_default_client_secret="IR1za9-1VK0zZ0f_O8MVFicn"
 
 .if !defined(GN_ONLY)
-SUB_FILES=	chromium-browser.desktop chrome pkg-message
+SUB_FILES=	chromium-browser.desktop chrome
 SUB_LIST+=	COMMENT="${COMMENT}"
 
 OPTIONS_DEFINE=	CODECS CUPS DEBUG DRIVER KERBEROS TEST
