@@ -1,5 +1,4 @@
 bin/chrome
-libdata/ldconfig/chromium
 %%DATADIR%%/chrome
 %%DATADIR%%/chrome-wrapper
 %%DATADIR%%/chrome_100_percent.pak
@@ -1092,9 +1091,6 @@ libdata/ldconfig/chromium
 %%DATADIR%%/resources/inspector/web_audio/web_audio_module.js
 %%DATADIR%%/resources/inspector/web_audio/web_audio-legacy.js
 %%DATADIR%%/resources/inspector/web_audio/web_audio.js
-%%DATADIR%%/resources/inspector/webauthn/webauthn-legacy.js
-%%DATADIR%%/resources/inspector/webauthn/webauthn.js
-%%DATADIR%%/resources/inspector/webauthn/webauthn_module.js
 %%DEBUG%%%%DATADIR%%/resources/inspector/web_audio/AudioContextContentBuilder.js
 %%DEBUG%%%%DATADIR%%/resources/inspector/web_audio/AudioContextSelector.js
 %%DEBUG%%%%DATADIR%%/resources/inspector/web_audio/graph_visualizer/EdgeView.js
@@ -1105,6 +1101,9 @@ libdata/ldconfig/chromium
 %%DEBUG%%%%DATADIR%%/resources/inspector/web_audio/graph_visualizer/NodeView.js
 %%DEBUG%%%%DATADIR%%/resources/inspector/web_audio/WebAudioModel.js
 %%DEBUG%%%%DATADIR%%/resources/inspector/web_audio/WebAudioView.js
+%%DATADIR%%/resources/inspector/webauthn/webauthn-legacy.js
+%%DATADIR%%/resources/inspector/webauthn/webauthn.js
+%%DATADIR%%/resources/inspector/webauthn/webauthn_module.js
 %%DATADIR%%/resources/inspector/worker_app.html
 %%DATADIR%%/resources/inspector/worker_app.js
 %%DATADIR%%/resources/inspector/worker_main/worker_main-legacy.js
