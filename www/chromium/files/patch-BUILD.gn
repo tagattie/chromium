@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2020-09-08 19:13:56 UTC
+--- BUILD.gn.orig	2020-09-21 18:38:58 UTC
 +++ BUILD.gn
 @@ -427,7 +427,7 @@ group("gn_all") {
      ]

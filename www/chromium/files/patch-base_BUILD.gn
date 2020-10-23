@@ -23,7 +23,7 @@
        ]
      }
 +
-+    if (is_bsd) {
++    if (is_freebsd) {
 +      sources += [
 +        "profiler/stack_sampler_posix.cc",
 +      ]
@@ -53,7 +53,7 @@
      }
    }
  
-+  if (is_bsd) {
++  if (is_freebsd) {
 +    sources -= [
 +      "files/file_path_watcher_linux.cc",
 +      "files/file_util_linux.cc",

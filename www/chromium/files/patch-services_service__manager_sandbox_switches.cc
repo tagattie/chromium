@@ -1,6 +1,6 @@
---- services/service_manager/sandbox/switches.cc.orig	2020-09-08 12:14:09.000000000 -0700
-+++ services/service_manager/sandbox/switches.cc	2020-09-17 12:18:17.445443000 -0700
-@@ -85,7 +85,7 @@
+--- services/service_manager/sandbox/switches.cc.orig	2020-09-21 18:39:22 UTC
++++ services/service_manager/sandbox/switches.cc
+@@ -85,7 +85,7 @@ const char kGpuSandboxFailuresFatal[] = "gpu-sandbox-f
  // Meant to be used as a browser-level switch for testing purposes only.
  const char kNoSandbox[] = "no-sandbox";
  
