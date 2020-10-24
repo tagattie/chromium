@@ -27,8 +27,7 @@ BUILD_DEPENDS+=	gperf:devel/gperf \
 		${LOCALBASE}/bin/ar:devel/binutils \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
-		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR} \
-		llvm11>0:devel/llvm11
+		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR}
 .endif
 
 .if !defined(GN_ONLY)
@@ -105,7 +104,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 # replace_gn_files.py script, some parts just turned on/off for target host
 # OS "target_os == is_bsd", like libusb, libpci.
 GN_ARGS+=	clang_use_chrome_plugins=false \
-		clang_base_path = /usr/local/llvm11 \
 		enable_hangout_services_extension=true \
 		enable_nacl=false \
 		enable_one_click_signin=true \
@@ -148,7 +146,7 @@ DRIVER_DESC=	Install chromedriver
 OPTIONS_GROUP=		AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO SNDIO
 
-OPTIONS_DEFAULT=	ALSA CODECS CUPS DRIVER KERBEROS
+OPTIONS_DEFAULT=	CODECS CUPS DRIVER KERBEROS SNDIO
 OPTIONS_SUB=		yes
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -176,7 +174,7 @@ DEBUG_VARS_OFF=		BUILDTYPE=Release \
 			GN_ARGS+=blink_symbol_level=0 \
 			GN_ARGS+=is_debug=false \
 			GN_ARGS+=is_official_build=true \
-			GN_ARGS+=symbol_level=1 \
+			GN_ARGS+=symbol_level=0 \
 			WANTSPACE="a fair amount of free disk space (~ 6.5GB)"
 
 DRIVER_MAKE_ARGS=	chromedriver
