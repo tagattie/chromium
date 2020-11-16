@@ -1,4 +1,4 @@
---- gpu/config/gpu_control_list.cc.orig	2020-10-07 16:38:46 UTC
+--- gpu/config/gpu_control_list.cc.orig	2020-11-13 06:36:44 UTC
 +++ gpu/config/gpu_control_list.cc
 @@ -17,7 +17,11 @@
  #include "base/values.h"

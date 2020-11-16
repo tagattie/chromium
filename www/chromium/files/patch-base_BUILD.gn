@@ -1,6 +1,6 @@
---- base/BUILD.gn.orig	2020-10-07 16:38:33 UTC
+--- base/BUILD.gn.orig	2020-11-13 06:36:34 UTC
 +++ base/BUILD.gn
-@@ -59,7 +59,7 @@ declare_args() {
+@@ -53,7 +53,7 @@ declare_args() {
    # replacement base::Location::Current(). On by default in non-official builds
    # for testing purposes.
    # TODO(https://crbug.com/974061): remove this eventually.
@@ -13,8 +13,8 @@
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
--    if (!is_nacl && !is_mac && !is_ios) {
-+    if (!is_nacl && !is_mac && !is_ios && !is_bsd) {
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_bsd) {
        sources += [
          "cpu_affinity_posix.cc",
          "cpu_affinity_posix.h",
@@ -30,7 +30,7 @@
    }
  
    if (is_win) {
-@@ -1288,7 +1293,7 @@ component("base") {
+@@ -1295,7 +1300,7 @@ component("base") {
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
    if (!use_sysroot &&
@@ -39,16 +39,16 @@
        host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
-@@ -1314,7 +1319,7 @@ component("base") {
-         "allocator/allocator_shim_override_glibc_weak_symbols.h",
-       ]
-       deps += [ "//base/allocator:tcmalloc" ]
--    } else if ((is_linux || is_chromeos) && use_allocator == "none") {
-+    } else if (((is_linux || is_chromeos) && !is_bsd) && use_allocator == "none") {
-       sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
-     } else if ((is_linux || is_chromeos || is_android) &&
-                use_allocator == "partition") {
-@@ -1930,6 +1935,34 @@ component("base") {
+@@ -1342,7 +1347,7 @@ component("base") {
+           "allocator/allocator_shim_default_dispatch_to_mac_zoned_malloc.cc",
+         ]
+       }
+-      if (is_chromeos || is_linux) {
++      if ((is_chromeos || is_linux) && !is_bsd) {
+         sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
+       }
+       if (is_win) {
+@@ -1956,6 +1961,34 @@ component("base") {
      }
    }
  
@@ -83,25 +83,21 @@
    # iOS
    if (is_ios) {
      sources -= [
-@@ -3054,7 +3087,7 @@ test("base_unittests") {
+@@ -3069,7 +3102,7 @@ test("base_unittests") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [ "debug/proc_maps_linux_unittest.cc" ]
+   }
+ 
+@@ -3110,7 +3143,7 @@ test("base_unittests") {
        "posix/unix_domain_socket_unittest.cc",
        "task/thread_pool/task_tracker_posix_unittest.cc",
      ]
--    if (!is_nacl && !is_mac && !is_ios) {
-+    if (!is_nacl && !is_mac && !is_ios && !is_bsd) {
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_bsd) {
        sources += [
          "cpu_affinity_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3274,6 +3307,12 @@ test("base_unittests") {
-     ]
- 
-     manifest = "//build/config/fuchsia/tests.cmx"
-+  }
-+
-+  if (is_bsd) {
-+    sources -= [
-+      "debug/proc_maps_linux_unittest.cc",
-+    ]
-   }
- 
-   if (!is_fuchsia && !is_ios) {

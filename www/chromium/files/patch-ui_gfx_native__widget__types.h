@@ -1,4 +1,4 @@
---- ui/gfx/native_widget_types.h.orig	2020-10-07 16:39:11 UTC
+--- ui/gfx/native_widget_types.h.orig	2020-11-13 06:37:06 UTC
 +++ ui/gfx/native_widget_types.h
 @@ -103,7 +103,7 @@ class ViewAndroid;
  #endif

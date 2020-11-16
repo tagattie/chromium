@@ -1,4 +1,4 @@
---- base/system/sys_info_freebsd.cc.orig	2020-07-07 21:57:30 UTC
+--- base/system/sys_info_freebsd.cc.orig	2020-11-13 06:36:34 UTC
 +++ base/system/sys_info_freebsd.cc
 @@ -9,30 +9,86 @@
  #include <sys/sysctl.h>

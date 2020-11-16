@@ -1,4 +1,4 @@
---- components/content_settings/core/browser/website_settings_registry.cc.orig	2020-10-07 16:38:42 UTC
+--- components/content_settings/core/browser/website_settings_registry.cc.orig	2020-11-13 06:36:40 UTC
 +++ components/content_settings/core/browser/website_settings_registry.cc
 @@ -66,7 +66,7 @@ const WebsiteSettingsInfo* WebsiteSettingsRegistry::Re
  #if defined(OS_WIN)

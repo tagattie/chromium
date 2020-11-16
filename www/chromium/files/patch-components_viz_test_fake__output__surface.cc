@@ -1,4 +1,4 @@
---- components/viz/test/fake_output_surface.cc.orig	2020-10-07 16:38:44 UTC
+--- components/viz/test/fake_output_surface.cc.orig	2020-11-13 06:36:42 UTC
 +++ components/viz/test/fake_output_surface.cc
 @@ -115,7 +115,7 @@ gfx::OverlayTransform FakeOutputSurface::GetDisplayTra
                                           : gfx::OVERLAY_TRANSFORM_NONE;

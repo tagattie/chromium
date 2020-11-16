@@ -1,4 +1,4 @@
---- ui/gfx/render_text.cc.orig	2020-10-07 16:39:11 UTC
+--- ui/gfx/render_text.cc.orig	2020-11-13 06:37:06 UTC
 +++ ui/gfx/render_text.cc
 @@ -1191,32 +1191,33 @@ void RenderText::SetDisplayOffset(int horizontal_offse
    const int extra_content = GetContentWidth() - display_rect_.width();

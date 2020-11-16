@@ -1,4 +1,4 @@
---- third_party/webrtc/rtc_base/network.h.orig	2020-10-07 16:40:42 UTC
+--- third_party/webrtc/rtc_base/network.h.orig	2020-11-13 06:42:25 UTC
 +++ third_party/webrtc/rtc_base/network.h
 @@ -29,6 +29,10 @@
  #include "rtc_base/third_party/sigslot/sigslot.h"

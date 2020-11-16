@@ -1,4 +1,4 @@
---- base/system/sys_info.h.orig	2020-10-07 16:38:34 UTC
+--- base/system/sys_info.h.orig	2020-11-13 06:36:34 UTC
 +++ base/system/sys_info.h
 @@ -202,6 +202,8 @@ class BASE_EXPORT SysInfo {
    // On Desktop this returns true when memory <= 512MB.
@@ -13,8 +13,8 @@
    static bool IsLowEndDeviceImpl();
    static HardwareInfo GetHardwareInfoSync();
  
--#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_AIX)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD) || \
+     defined(OS_AIX)
    static int64_t AmountOfAvailablePhysicalMemory(
        const SystemMemoryInfoKB& meminfo);
- #endif

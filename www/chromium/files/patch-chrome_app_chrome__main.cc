@@ -1,4 +1,4 @@
---- chrome/app/chrome_main.cc.orig	2020-10-07 16:38:35 UTC
+--- chrome/app/chrome_main.cc.orig	2020-11-13 06:36:35 UTC
 +++ chrome/app/chrome_main.cc
 @@ -109,12 +109,12 @@ int ChromeMain(int argc, const char** argv) {
  

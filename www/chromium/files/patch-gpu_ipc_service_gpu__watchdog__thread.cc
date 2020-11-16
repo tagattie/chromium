@@ -1,4 +1,4 @@
---- gpu/ipc/service/gpu_watchdog_thread.cc.orig	2020-10-07 16:38:46 UTC
+--- gpu/ipc/service/gpu_watchdog_thread.cc.orig	2020-11-13 06:36:44 UTC
 +++ gpu/ipc/service/gpu_watchdog_thread.cc
 @@ -57,7 +57,7 @@ const int kNewGpuTimeout = 17000;
  const int kNewGpuTimeout = 15000;

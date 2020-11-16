@@ -1,4 +1,4 @@
---- base/files/file_path_watcher_unittest.cc.orig	2020-10-07 16:38:34 UTC
+--- base/files/file_path_watcher_unittest.cc.orig	2020-11-13 06:36:34 UTC
 +++ base/files/file_path_watcher_unittest.cc
 @@ -425,12 +425,12 @@ TEST_F(FilePathWatcherTest, WatchDirectory) {
    VLOG(1) << "Waiting for file1 creation";
@@ -15,6 +15,24 @@
  
    ASSERT_TRUE(base::DeleteFile(file1));
    VLOG(1) << "Waiting for file1 deletion";
+@@ -632,7 +632,7 @@ TEST_F(FilePathWatcherTest, FileAttributesChanged) {
+   ASSERT_TRUE(WaitForEvents());
+ }
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ 
+ // Verify that creating a symlink is caught.
+ TEST_F(FilePathWatcherTest, CreateLink) {
+@@ -790,7 +790,7 @@ TEST_F(FilePathWatcherTest, LinkedDirectoryPart3) {
+   ASSERT_TRUE(WaitForEvents());
+ }
+ 
+-#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
++#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ 
+ enum Permission {
+   Read,
 @@ -798,7 +798,7 @@ enum Permission {
    Execute
  };

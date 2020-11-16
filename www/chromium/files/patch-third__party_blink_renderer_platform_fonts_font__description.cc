@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/fonts/font_description.cc.orig	2020-10-07 16:38:51 UTC
+--- third_party/blink/renderer/platform/fonts/font_description.cc.orig	2020-11-13 06:36:48 UTC
 +++ third_party/blink/renderer/platform/fonts/font_description.cc
 @@ -39,7 +39,7 @@
  #include "third_party/blink/renderer/platform/wtf/text/string_hash.h"
