@@ -5,7 +5,7 @@
    int ret = IGNORE_EINTR(close(fd));
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_APPLE) || \
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD || defined(OS_APPLE) || \
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD) || defined(OS_APPLE) || \
      defined(OS_FUCHSIA) || defined(OS_ANDROID)
    // NB: Some file descriptors can return errors from close() e.g. network
    // filesystems such as NFS and Linux input devices. On Linux, macOS, and

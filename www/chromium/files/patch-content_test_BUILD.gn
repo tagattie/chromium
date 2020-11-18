@@ -17,3 +17,12 @@
      deps += [
        "//services/service_manager/tests:interfaces",
        "//ui/gfx:test_support",
+@@ -1625,7 +1627,7 @@ static_library("run_all_unittests") {
+     ":test_support",
+     "//base/test:test_support",
+   ]
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     deps += [ "//content/common:set_process_title_linux" ]
+   }
+ }

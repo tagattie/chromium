@@ -16,9 +16,9 @@
 -#if defined(OS_WIN) || defined(OS_IOS) || defined(OS_FUCHSIA) || \
 -    ((defined(OS_LINUX) || defined(OS_CHROMEOS)) &&              \
 -     !defined(THREAD_SANITIZER)) ||                              \
-+#if defined(OS_WIN) || defined(OS_IOS) || defined(OS_FUCHSIA) ||      \
-+    ((defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD) && \
-+     !defined(THREAD_SANITIZER)) ||                                   \
++#if defined(OS_WIN) || defined(OS_IOS) || defined(OS_FUCHSIA) ||       \
++    ((defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && \
++     !defined(THREAD_SANITIZER)) ||                                    \
      (defined(OS_ANDROID) && !defined(ADDRESS_SANITIZER))
    EXPECT_EQ(0u, stack_size);
  #else

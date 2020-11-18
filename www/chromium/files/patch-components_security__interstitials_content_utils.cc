@@ -9,11 +9,3 @@
    struct ClockCommand {
      const char* const pathname;
      const char* const argument;
-@@ -50,6 +50,7 @@ void LaunchDateAndTimeSettings() {
-       {"/usr/bin/kcmshell4", "clock"},
-       {"/usr/local/bin/kcmshell4", "clock"},
-       {"/opt/bin/kcmshell4", "clock"},
-+#endif
-   };
- 
-   base::CommandLine command(base::FilePath(""));

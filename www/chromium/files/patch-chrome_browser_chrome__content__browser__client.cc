@@ -68,6 +68,24 @@
  #if defined(OS_ANDROID)
    bool enable_crash_reporter = true;
  #else
+@@ -3728,7 +3730,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+   }
+ }
+ 
+-#if defined(OS_POSIX) && !defined(OS_MAC)
++#if defined(OS_POSIX) && !defined(OS_MAC) && !defined(OS_BSD)
+ void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
+     const base::CommandLine& command_line,
+     int child_process_id,
+@@ -3763,7 +3765,7 @@ void ChromeContentBrowserClient::GetAdditionalMappedFi
+     mappings->Share(kCrashDumpSignal, crash_signal_fd);
+   }
+ }
+-#endif  // defined(OS_POSIX) && !defined(OS_MAC)
++#endif  // defined(OS_POSIX) && !defined(OS_MAC) && !defined(OS_BSD)
+ 
+ #if defined(OS_WIN)
+ base::string16 ChromeContentBrowserClient::GetAppContainerSidForSandboxType(
 @@ -3852,7 +3854,7 @@ bool ChromeContentBrowserClient::IsRendererCodeIntegri
  
  void ChromeContentBrowserClient::WillStartServiceManager() {

@@ -5,7 +5,7 @@
      return nullptr;
  
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || define(OS_BSD)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    if (base::FeatureList::IsEnabled(features::kBackgroundModeAllowRestart))
      return base::WrapUnique(new BackgroundModeOptimizer());
 -#endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)

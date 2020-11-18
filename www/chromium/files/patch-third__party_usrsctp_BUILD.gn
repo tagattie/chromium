@@ -9,13 +9,12 @@
      defines += [
        "__Userspace_os_Linux",
        "_GNU_SOURCE",
-@@ -137,6 +137,11 @@ static_library("usrsctp") {
+@@ -137,6 +137,10 @@ static_library("usrsctp") {
        "HAVE_SA_LEN",
        "__APPLE_USE_RFC_2292",
        "__Userspace_os_Darwin",
 +    ]
 +  } else if (is_bsd) {
-+    cflags += [ "-U__FreeBSD__" ]
 +    defines += [
 +      "__Userspace_os_FreeBSD",
      ]

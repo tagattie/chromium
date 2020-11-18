@@ -11,3 +11,12 @@
    if (enable_extensions) {
      sources += [
        "cast_messages.cc",
+@@ -487,7 +491,7 @@ static_library("common") {
+     public_deps += [ "//chrome/common/safe_browsing" ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "auto_start_linux.cc",
+       "auto_start_linux.h",

@@ -49,6 +49,15 @@
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
+@@ -678,7 +668,7 @@ group("gn_all") {
+     }
+   }
+ 
+-  if (is_mac || is_win || is_android || (is_linux && !is_chromeos)) {
++  if (is_mac || is_win || is_android || (is_linux && !is_chromeos && !is_bsd)) {
+     deps += [
+       "//third_party/crashpad/crashpad:crashpad_tests",
+       "//third_party/crashpad/crashpad/handler:crashpad_handler",
 @@ -797,7 +787,6 @@ group("gn_all") {
        "//chrome/browser/vr:vr_common_perftests",
        "//chrome/browser/vr:vr_common_unittests",

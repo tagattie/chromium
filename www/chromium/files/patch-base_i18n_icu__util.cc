@@ -5,7 +5,7 @@
  #endif
  
 -#if defined(OS_ANDROID) || defined(OS_FUCHSIA) || \
-+#if defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD) \
++#if defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD) || \
      ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && !BUILDFLAG(IS_CHROMECAST))
  #include "third_party/icu/source/i18n/unicode/timezone.h"
  #endif

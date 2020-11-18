@@ -25,7 +25,7 @@
 +#elif defined(OS_BSD)
 +std::string* CpuInfoBrand() {
 +  static std::string* brand = []() {
-+    return SysInfo::CPUModelName();
++    return new std::string(SysInfo::CPUModelName());
 +  }();
 +
 +  return brand;

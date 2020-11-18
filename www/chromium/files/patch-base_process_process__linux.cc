@@ -1,6 +1,25 @@
 --- base/process/process_linux.cc.orig	2020-11-13 06:36:34 UTC
 +++ base/process/process_linux.cc
-@@ -96,13 +96,18 @@ Time Process::CreationTime() const {
+@@ -24,7 +24,9 @@ namespace base {
+ 
+ namespace {
+ 
++#if !defined(OS_BSD)
+ const int kForegroundPriority = 0;
++#endif
+ 
+ #if defined(OS_CHROMEOS) || BUILDFLAG(IS_LACROS)
+ // We are more aggressive in our lowering of background process priority
+@@ -69,7 +71,7 @@ struct CGroups {
+     return groups;
+   }
+ };
+-#else
++#elif !defined(OS_BSD)
+ const int kBackgroundPriority = 5;
+ #endif  // defined(OS_CHROMEOS) || BUILDFLAG(IS_LACROS)
+ 
+@@ -96,13 +98,18 @@ Time Process::CreationTime() const {
    if (!start_ticks)
      return Time();
  
@@ -19,7 +38,7 @@
  // static
  bool Process::CanBackgroundProcesses() {
  #if defined(OS_CHROMEOS) || BUILDFLAG(IS_LACROS)
-@@ -154,6 +159,7 @@ bool Process::SetProcessBackgrounded(bool background) 
+@@ -154,6 +161,7 @@ bool Process::SetProcessBackgrounded(bool background) 
    DPCHECK(result == 0);
    return result == 0;
  }
