@@ -1,10 +1,7 @@
 --- content/gpu/gpu_sandbox_hook_linux.cc.orig	2020-11-13 06:36:43 UTC
 +++ content/gpu/gpu_sandbox_hook_linux.cc
-@@ -359,8 +359,10 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
-   AddStandardGpuPermissions(&permissions);
-   return permissions;
+@@ -361,6 +361,7 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
  }
-+#endif
  
  void LoadArmGpuLibraries() {
 +#if !defined(OS_BSD)
@@ -19,11 +16,3 @@
  }
  
  bool LoadAmdGpuLibraries() {
-@@ -441,6 +444,7 @@ bool LoadLibrariesForGpu(
-   return true;
- }
- 
-+#if !defined(OS_BSD)
- sandbox::syscall_broker::BrokerCommandSet CommandSetForGPU(
-     const sandbox::policy::SandboxLinux::Options& options) {
-   sandbox::syscall_broker::BrokerCommandSet command_set;
