@@ -59,7 +59,8 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libsecret-1.so:security/libsecret \
 		libnss3.so:security/nss \
 		libexpat.so:textproc/expat2 \
-		libfontconfig.so:x11-fonts/fontconfig
+		libfontconfig.so:x11-fonts/fontconfig \
+		libxkbcommon.so:x11/libxkbcommon
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		noto-basic>0:x11-fonts/noto-basic
