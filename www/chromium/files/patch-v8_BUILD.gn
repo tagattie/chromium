@@ -1,6 +1,6 @@
---- v8/BUILD.gn.orig	2020-11-13 06:42:28 UTC
+--- v8/BUILD.gn.orig	2020-11-16 18:16:04 UTC
 +++ v8/BUILD.gn
-@@ -4068,9 +4068,15 @@
+@@ -4068,9 +4068,15 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -17,11 +17,11 @@
        "src/base/platform/platform-linux.cc",
      ]
  
-@@ -4507,6 +4513,7 @@
-       "src/snapshot/mksnapshot.cc",
-       "src/snapshot/snapshot-empty.cc",
+@@ -4482,6 +4488,7 @@ if (current_toolchain == v8_generator_toolchain) {
+       "src/interpreter/bytecodes.cc",
+       "src/interpreter/bytecodes.h",
      ]
 +    libs = ["execinfo"]
  
-     if (v8_control_flow_integrity) {
-       sources += [ "src/deoptimizer/deoptimizer-cfi-empty.cc" ]
+     configs = [ ":internal_config" ]
+ 
