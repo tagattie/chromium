@@ -9,6 +9,15 @@
    monitor = std::make_unique<util::MultiSourceMemoryPressureMonitor>();
  #endif
    // No memory monitor on other platforms...
+@@ -611,7 +611,7 @@ int BrowserMainLoop::EarlyInitialization() {
+ 
+   // Up the priority of the UI thread unless it was already high (since Mac
+   // and recent versions of Android (O+) do this automatically).
+-#if !defined(OS_MAC)
++#if !defined(OS_MAC) && !defined(OS_BSD)
+   if (base::FeatureList::IsEnabled(
+           features::kBrowserUseDisplayThreadPriority) &&
+       base::PlatformThread::GetCurrentThreadPriority() <
 @@ -621,7 +621,7 @@ int BrowserMainLoop::EarlyInitialization() {
    }
  #endif  // !defined(OS_MAC)
