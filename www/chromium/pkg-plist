@@ -1,5 +1,4 @@
 bin/chrome
-libdata/ldconfig/chromium
 %%DATADIR%%/chrome
 %%DATADIR%%/chrome-wrapper
 %%DATADIR%%/chrome_100_percent.pak
@@ -372,10 +371,6 @@ libdata/ldconfig/chromium
 %%DEBUG%%%%DATADIR%%/resources/inspector/common/Worker.js
 %%DEBUG%%%%DATADIR%%/resources/inspector/common/Worker.js.map
 %%DATADIR%%/resources/inspector/component_helpers/component_helpers.js
-%%DATADIR%%/resources/inspector/component_helpers/component-server-setup.js
-%%DATADIR%%/resources/inspector/component_helpers/component-server-setup.js.map
-%%DATADIR%%/resources/inspector/component_helpers/get-stylesheet.js
-%%DATADIR%%/resources/inspector/component_helpers/get-stylesheet.js.map
 %%DATADIR%%/resources/inspector/components/components.js
 %%DATADIR%%/resources/inspector/components/components-legacy.js
 %%DEBUG%%%%DATADIR%%/resources/inspector/components/ImagePreview.js
@@ -1643,8 +1638,6 @@ libdata/ldconfig/chromium
 %%DEBUG%%%%DATADIR%%/resources/inspector/third_party/lighthouse/report-assets/report-generator.js
 %%DEBUG%%%%DATADIR%%/resources/inspector/third_party/lighthouse/report-assets/report.d.ts
 %%DEBUG%%%%DATADIR%%/resources/inspector/third_party/lighthouse/report-assets/report.js
-%%DATADIR%%/resources/inspector/third_party/lit-html/directives.js
-%%DATADIR%%/resources/inspector/third_party/lit-html/directives.js.map
 %%DATADIR%%/resources/inspector/third_party/lit-html/lit-html-tsconfig.json
 %%DATADIR%%/resources/inspector/third_party/lit-html/lit-html.js
 %%DATADIR%%/resources/inspector/third_party/lit-html/package/directives/class-map.d.ts
