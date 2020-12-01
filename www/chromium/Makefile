@@ -98,6 +98,10 @@ INSTALLS_ICONS=	yes
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-build_config_compiler_pgo_pgo.gni
+.endif
+
 # TODO bz@ : install libwidevinecdm.so (see third_party/widevine/cdm/BUILD.gn)
 #
 # Run "./out/${BUILDTYPE}/gn args out/${BUILDTYPE} --list" for all variables.
