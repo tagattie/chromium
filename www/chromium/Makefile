@@ -14,6 +14,9 @@ COMMENT=	Google web browser based on WebKit
 LICENSE=	BSD3CLAUSE LGPL21 MPL11
 LICENSE_COMB=	multi
 
+BROKEN_FreeBSD_11_aarch64=	components/safe_browsing_db/v4_rice.cc:120:18: use of overloaded operator '&' is ambiguous
+ONLY_FOR_ARCHS=			aarch64 amd64 i386
+
 BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
@@ -60,9 +63,6 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		noto-basic>0:x11-fonts/noto-basic
-
-BROKEN_FreeBSD_11_aarch64=	components/safe_browsing_db/v4_rice.cc:120:18: use of overloaded operator '&' is ambiguous
-ONLY_FOR_ARCHS=			aarch64 amd64 i386
 
 USES=		bison cpe desktop-file-utils dos2unix gl gnome jpeg localbase:ldflags \
 		ninja perl5 pkgconfig python:2.7,build shebangfix tar:xz xorg
