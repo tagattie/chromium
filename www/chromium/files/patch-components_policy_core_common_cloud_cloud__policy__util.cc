@@ -27,16 +27,23 @@
  #include "base/system/sys_info.h"
  #endif
  
-@@ -75,7 +75,7 @@ namespace policy {
+@@ -75,9 +75,14 @@ namespace policy {
  namespace em = enterprise_management;
  
  std::string GetMachineName() {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
++#if defined(OS_BSD)
++  char hostname[MAXHOSTNAMELEN];
++  if (gethostname(hostname, MAXHOSTNAMELEN) == 0)
++#else
    char hostname[HOST_NAME_MAX];
    if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.
++#endif
      return hostname;
-@@ -136,7 +136,7 @@ std::string GetMachineName() {
+   return std::string();
+ #elif defined(OS_APPLE)
+@@ -136,7 +141,7 @@ std::string GetMachineName() {
  }
  
  std::string GetOSVersion() {
@@ -45,7 +52,7 @@
    return base::SysInfo::OperatingSystemVersion();
  #elif defined(OS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -159,7 +159,7 @@ std::string GetOSArchitecture() {
+@@ -159,7 +164,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {

@@ -26,13 +26,13 @@
               const FilePathWatcher::Callback& callback) override {
 +#if defined(OS_BSD)
 +    DCHECK(!impl_.get());
-+    if (recursive) {
++    if (type == Type::kRecursive) {
 +      return false;
 +    } else {
 +      impl_ = std::make_unique<FilePathWatcherKQueue>();
 +    }
 +    DCHECK(impl_.get());
-+    return impl_->Watch(path, recursive, callback);
++    return impl_->Watch(path, type, callback);
 +#else
      return false;
 +#endif
