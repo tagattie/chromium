@@ -1,8 +1,8 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
-# $FreeBSD: head/www/chromium/Makefile 556921 2020-12-03 20:36:25Z cem $
+# $FreeBSD: head/www/chromium/Makefile 563913 2021-02-03 19:46:35Z sunpoet $
 
 PORTNAME=	chromium
-PORTVERSION=	88.0.4324.96
+PORTVERSION=	88.0.4324.146
 CATEGORIES=	www java
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/rene/chromium/:fonts
@@ -28,7 +28,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/bin/ar:devel/binutils \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
-		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR} \
+		${LOCALBASE}/include/va/va.h:multimedia/libva
 
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libatspi.so:accessibility/at-spi2-core \
