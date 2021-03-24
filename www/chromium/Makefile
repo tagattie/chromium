@@ -2,7 +2,7 @@
 # $FreeBSD: head/www/chromium/Makefile 563913 2021-02-03 19:46:35Z sunpoet $
 
 PORTNAME=	chromium
-PORTVERSION=	88.0.4324.150
+PORTVERSION=	89.0.4389.90
 CATEGORIES=	www java
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/rene/chromium/:fonts
@@ -121,17 +121,24 @@ GN_BOOTSTRAP_FLAGS=	--no-clean --no-rebuild --skip-generate-buildfiles
 # Set up Google API keys, see http://www.chromium.org/developers/how-tos/api-keys .
 # Note: these are for FreeBSD use ONLY. For your own distribution,
 # please get your own set of keys.
-GN_ARGS+=	google_api_key="AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8" \
-		google_default_client_id="996322985003.apps.googleusercontent.com" \
-		google_default_client_secret="IR1za9-1VK0zZ0f_O8MVFicn"
+GN_ARGS+=	google_api_key="AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8"
+
 SUB_FILES=	chromium-browser.desktop chrome
 SUB_LIST+=	COMMENT="${COMMENT}"
 
-OPTIONS_DEFINE=	CODECS CUPS DEBUG DRIVER KERBEROS TEST
+OPTIONS_DEFINE=	CODECS CUPS DEBUG DRIVER KERBEROS LTO TEST
 CODECS_DESC=	Compile and enable patented codecs like H.264
 DRIVER_DESC=	Install chromedriver
 OPTIONS_GROUP=		AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO SNDIO
+
+OPTIONS_RADIO=		KERBEROS
+OPTIONS_RADIO_KERBEROS=	HEIMDAL HEIMDAL_BASE MIT
+HEIMDAL_DESC=		Heimdal Kerberos (security/heimdal)
+HEIMDAL_BASE_DESC=	Heimdal Kerberos (base)
+MIT_DESC=		MIT Kerberos (security/krb5)
+HEIMDAL_LIB_DEPENDS=	libkrb.so.26:security/heimdal
+MIT_LIB_DEPENDS=	libkrb.so.3:security/krb5
 
 OPTIONS_DEFAULT=	CODECS CUPS DRIVER KERBEROS SNDIO
 OPTIONS_SUB=		yes
@@ -156,18 +163,22 @@ DEBUG_VARS=		BUILDTYPE=Debug \
 			GN_ARGS+=is_component_build=false \
 			GN_ARGS+=symbol_level=1 \
 			GN_BOOTSTRAP_FLAGS+=--debug \
-			WANTSPACE="lots of free disk space (~ 13GB)"
+			WANTSPACE="13 GB"
 DEBUG_VARS_OFF=		BUILDTYPE=Release \
 			GN_ARGS+=blink_symbol_level=0 \
 			GN_ARGS+=is_debug=false \
 			GN_ARGS+=is_official_build=true \
 			GN_ARGS+=symbol_level=0 \
-			WANTSPACE="a fair amount of free disk space (~ 6.5GB)"
+			WANTSPACE="6.5 GB"
 
 DRIVER_MAKE_ARGS=	chromedriver
 
 KERBEROS_VARS=		GN_ARGS+=use_kerberos=true
 KERBEROS_VARS_OFF=	GN_ARGS+=use_kerberos=false
+
+LTO_VARS=		GN_ARGS+=use_thin_lto=true \
+			GN_ARGS+=thin_lto_enable_optimizations=true \
+			WANTSPACE="14 GB"
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_VARS=	GN_ARGS+=use_pulseaudio=true
@@ -188,8 +199,16 @@ TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX} \
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MHEIMDAL_BASE} && !exists(/usr/lib/libkrb5.so)
+IGNORE=		you have selected HEIMDAL_BASE but do not have Heimdal installed in base
+.endif
+
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-build_config_compiler_pgo_pgo.gni
+
+.if ${PORT_OPTIONS:MLTO}
+BROKEN+=	does not build with LTO on FreeBSD < 13, needs LLVM 11+
+.endif
 .endif
 
 # swiftshader/lib/{libEGL.so,libGLESv2.so} is x86 only
@@ -215,7 +234,7 @@ MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "To build Chromium, you should have around 2GB of memory"
-	@${ECHO_MSG} "and ${WANTSPACE}."
+	@${ECHO_MSG} "and around ${WANTSPACE} of free disk space."
 	@${ECHO_MSG}
 
 post-extract-TEST-on:
@@ -323,6 +342,8 @@ do-install:
 
 post-install-DEBUG-on:
 	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/*.so \
+		${STAGEDIR}${DATADIR}
+	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/libvulkan.so.1 \
 		${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/character_data_generator \
 		${STAGEDIR}${DATADIR}
