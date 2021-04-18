@@ -1,4 +1,4 @@
---- third_party/perfetto/include/perfetto/ext/base/thread_utils.h.orig	2020-10-07 16:40:37 UTC
+--- third_party/perfetto/include/perfetto/ext/base/thread_utils.h.orig	2020-11-13 06:42:20 UTC
 +++ third_party/perfetto/include/perfetto/ext/base/thread_utils.h
 @@ -47,6 +47,9 @@ inline bool MaybeSetThreadName(const std::string& name
  

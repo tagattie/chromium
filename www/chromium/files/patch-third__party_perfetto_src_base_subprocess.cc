@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/subprocess.cc.orig	2020-10-07 16:40:37 UTC
+--- third_party/perfetto/src/base/subprocess.cc.orig	2020-11-13 06:42:20 UTC
 +++ third_party/perfetto/src/base/subprocess.cc
 @@ -35,8 +35,8 @@
  #include "perfetto/base/time.h"

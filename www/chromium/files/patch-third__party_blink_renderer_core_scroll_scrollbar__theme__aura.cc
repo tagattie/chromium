@@ -1,4 +1,4 @@
---- third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc.orig	2020-10-07 16:38:51 UTC
+--- third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc.orig	2020-11-13 06:36:48 UTC
 +++ third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc
 @@ -137,7 +137,7 @@ bool ScrollbarThemeAura::SupportsDragSnapBack() const 
  // Disable snapback on desktop Linux to better integrate with the desktop

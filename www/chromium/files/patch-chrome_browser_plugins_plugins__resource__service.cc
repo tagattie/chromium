@@ -1,4 +1,4 @@
---- chrome/browser/plugins/plugins_resource_service.cc.orig	2020-10-07 16:38:38 UTC
+--- chrome/browser/plugins/plugins_resource_service.cc.orig	2020-11-13 06:36:37 UTC
 +++ chrome/browser/plugins/plugins_resource_service.cc
 @@ -62,7 +62,7 @@ GURL GetPluginsServerURL() {
    filename = "plugins_win.json";

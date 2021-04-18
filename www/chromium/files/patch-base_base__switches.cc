@@ -1,4 +1,4 @@
---- base/base_switches.cc.orig	2020-10-07 16:38:33 UTC
+--- base/base_switches.cc.orig	2020-11-13 06:36:34 UTC
 +++ base/base_switches.cc
 @@ -117,7 +117,7 @@ const char kDisableHighResTimer[] = "disable-highres-t
  const char kDisableUsbKeyboardDetect[]      = "disable-usb-keyboard-detect";
@@ -13,8 +13,8 @@
  
  #endif
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  // Controls whether or not retired instruction counts are surfaced for threads
  // in trace events on Linux.
  //

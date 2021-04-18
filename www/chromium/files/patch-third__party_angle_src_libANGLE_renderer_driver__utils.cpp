@@ -1,4 +1,4 @@
---- third_party/angle/src/libANGLE/renderer/driver_utils.cpp.orig	2020-10-07 16:40:31 UTC
+--- third_party/angle/src/libANGLE/renderer/driver_utils.cpp.orig	2020-11-13 06:42:14 UTC
 +++ third_party/angle/src/libANGLE/renderer/driver_utils.cpp
 @@ -17,7 +17,7 @@
  #    include <sys/system_properties.h>

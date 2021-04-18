@@ -1,4 +1,4 @@
---- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h.orig	2020-10-07 16:38:44 UTC
+--- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h.orig	2020-11-13 06:36:42 UTC
 +++ components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h
 @@ -163,7 +163,7 @@ class RootCompositorFrameSinkImpl : public mojom::Comp
    base::TimeDelta preferred_frame_interval_ =

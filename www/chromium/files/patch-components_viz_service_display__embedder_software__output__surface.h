@@ -1,4 +1,4 @@
---- components/viz/service/display_embedder/software_output_surface.h.orig	2020-10-07 16:38:44 UTC
+--- components/viz/service/display_embedder/software_output_surface.h.orig	2020-11-13 06:36:42 UTC
 +++ components/viz/service/display_embedder/software_output_surface.h
 @@ -48,7 +48,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
        UpdateVSyncParametersCallback callback) override;
