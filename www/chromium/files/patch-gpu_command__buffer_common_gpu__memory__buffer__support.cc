@@ -1,8 +1,8 @@
---- gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig	2020-07-07 21:57:38 UTC
+--- gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig	2020-10-07 16:38:46 UTC
 +++ gpu/command_buffer/common/gpu_memory_buffer_support.cc
 @@ -55,7 +55,7 @@ bool IsImageSizeValidForGpuMemoryBufferFormat(const gf
  uint32_t GetPlatformSpecificTextureTarget() {
- #if defined(OS_MACOSX)
+ #if defined(OS_MAC)
    return macos_specific_texture_target;
 -#elif defined(OS_ANDROID) || defined(OS_LINUX)
 +#elif defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)

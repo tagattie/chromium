@@ -1,6 +1,6 @@
---- base/path_service_unittest.cc.orig	2020-07-07 21:57:30 UTC
+--- base/path_service_unittest.cc.orig	2020-10-07 16:38:34 UTC
 +++ base/path_service_unittest.cc
-@@ -37,7 +37,7 @@ bool ReturnsValidPath(int dir_type) {
+@@ -38,7 +38,7 @@ bool ReturnsValidPath(int dir_type) {
    if (dir_type == DIR_CACHE)
      check_path_exists = false;
  #endif

@@ -5,7 +5,7 @@
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX) && !defined(OS_CHROMEOS)
      // Toggleing custom frames affects all open windows in the profile, hence
      // should be written to the regular profile when changed in incognito mode.
      prefs::kUseCustomChromeFrame,

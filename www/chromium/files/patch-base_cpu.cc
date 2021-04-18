@@ -1,15 +1,15 @@
---- base/cpu.cc.orig	2020-07-07 21:57:30 UTC
+--- base/cpu.cc.orig	2020-10-07 16:38:34 UTC
 +++ base/cpu.cc
-@@ -15,7 +15,7 @@
- 
- #include "base/stl_util.h"
+@@ -29,7 +29,7 @@
+ #include "base/threading/thread_restrictions.h"
+ #endif
  
 -#if defined(ARCH_CPU_ARM_FAMILY) && (defined(OS_ANDROID) || defined(OS_LINUX))
 +#if defined(ARCH_CPU_ARM_FAMILY) && (defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD))
  #include "base/files/file_util.h"
  #endif
  
-@@ -136,7 +136,7 @@ uint64_t xgetbv(uint32_t xcr) {
+@@ -150,7 +150,7 @@ uint64_t xgetbv(uint32_t xcr) {
  
  #endif  // ARCH_CPU_X86_FAMILY
  
@@ -18,7 +18,7 @@
  std::string* CpuInfoBrand() {
    static std::string* brand = []() {
      // This function finds the value from /proc/cpuinfo under the key "model
-@@ -166,7 +166,7 @@ std::string* CpuInfoBrand() {
+@@ -180,7 +180,7 @@ std::string* CpuInfoBrand() {
    return brand;
  }
  #endif  // defined(ARCH_CPU_ARM_FAMILY) && (defined(OS_ANDROID) ||
@@ -27,7 +27,7 @@
  
  }  // namespace
  
-@@ -288,7 +288,7 @@ void CPU::Initialize() {
+@@ -302,7 +302,7 @@ void CPU::Initialize() {
      }
    }
  #elif defined(ARCH_CPU_ARM_FAMILY)

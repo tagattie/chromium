@@ -1,7 +1,7 @@
---- base/test/test_suite.cc.orig	2020-09-08 19:13:57 UTC
+--- base/test/test_suite.cc.orig	2020-10-07 16:38:34 UTC
 +++ base/test/test_suite.cc
-@@ -70,7 +70,7 @@
- #include "base/test/test_support_ios.h"
+@@ -66,7 +66,7 @@
+ #include "base/test/test_support_android.h"
  #endif
  
 -#if defined(OS_LINUX)
@@ -9,7 +9,7 @@
  #include "base/test/fontconfig_util_linux.h"
  #endif
  
-@@ -386,14 +386,14 @@ void TestSuite::PreInitialize() {
+@@ -382,14 +382,14 @@ void TestSuite::PreInitialize() {
    testing::GTEST_FLAG(catch_exceptions) = false;
  #endif
    EnableTerminationOnHeapCorruption();
@@ -26,7 +26,7 @@
  
    // On Android, AtExitManager is created in
    // testing/android/native_test_wrapper.cc before main() is called.
-@@ -634,7 +634,7 @@ void TestSuite::Initialize() {
+@@ -650,7 +650,7 @@ void TestSuite::Initialize() {
    // TODO(jshin): Should we set the locale via an OS X locale API here?
    i18n::SetICUDefaultLocale("en_US");
  
