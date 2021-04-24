@@ -2045,7 +2045,7 @@ bin/chrome
 %%DEBUG%%%%DATADIR%%/resources/inspector/third_party/lit-html/directives.js.map
 %%DATADIR%%/resources/inspector/third_party/lit-html/lit-html-tsconfig.json
 %%DATADIR%%/resources/inspector/third_party/lit-html/lit-html.js
-%%DATADIR%%/resources/inspector/third_party/lit-html/lit-html.js.map
+%%DEBUG%%%%DATADIR%%/resources/inspector/third_party/lit-html/lit-html.js.map
 %%DATADIR%%/resources/inspector/third_party/lit-html/package/directives/class-map.d.ts
 %%DATADIR%%/resources/inspector/third_party/lit-html/package/directives/class-map.js
 %%DATADIR%%/resources/inspector/third_party/lit-html/package/directives/class-map.js.map
@@ -2098,7 +2098,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/third_party/lit-html/package/lit-html.js
 %%DATADIR%%/resources/inspector/third_party/lit-html/package/lit-html.js.map
 %%DATADIR%%/resources/inspector/third_party/marked/marked.js
-%%DATADIR%%/resources/inspector/third_party/marked/marked.js.map
+%%DEBUG%%%%DATADIR%%/resources/inspector/third_party/marked/marked.js.map
 %%DATADIR%%/resources/inspector/third_party/marked/marked-tsconfig.json
 %%DATADIR%%/resources/inspector/third_party/marked/package/lib/marked.esm.d.ts
 %%DATADIR%%/resources/inspector/third_party/marked/package/lib/marked.esm.js
@@ -2281,7 +2281,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/third_party/puppeteer/package/lib/esm/vendor/mitt/src/index.js
 %%DATADIR%%/resources/inspector/third_party/puppeteer/puppeteer-tsconfig.json
 %%DATADIR%%/resources/inspector/third_party/puppeteer/puppeteer.js
-%%DATADIR%%/resources/inspector/third_party/puppeteer/puppeteer.js.map
+%%DEBUG%%%%DATADIR%%/resources/inspector/third_party/puppeteer/puppeteer.js.map
 %%DATADIR%%/resources/inspector/third_party/wasmparser/package/dist/esm/WasmDis.js
 %%DATADIR%%/resources/inspector/third_party/wasmparser/package/dist/esm/WasmParser.js
 %%DATADIR%%/resources/inspector/third_party/wasmparser/wasmparser-tsconfig.json
