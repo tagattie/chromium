@@ -1,7 +1,7 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 
 PORTNAME=	chromium
-PORTVERSION=	90.0.4430.93
+PORTVERSION=	90.0.4430.212
 CATEGORIES=	www java
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/rene/chromium/:fonts
@@ -265,7 +265,7 @@ pre-configure:
 	# having the pre-compiled pyc files from 2.7 in the 3.x site packages
 	# Remove this as soon as chromium uses python3.x as well
 	@${MKDIR} ${WRKDIR}/site-packages/xcbgen
-	${CP} ${PYTHONBASE}/lib/python${PYTHON_DEFAULT}/site-packages/xcbgen/*.py \
+	${CP} ${PYTHONBASE}/lib/python3.7/site-packages/xcbgen/*.py \
 		${WRKDIR}/site-packages/xcbgen
 
 do-configure:
