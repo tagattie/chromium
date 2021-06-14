@@ -44,7 +44,7 @@
 +      if (is_bsd) {
 +        # FreeBSD < 13 uses LLVM 10, which doesn't support --thinlto-jobs=all
 +        ldflags += [ "-Wl,--thinlto-jobs=2" ]
-+      }
++      } else {
 +        ldflags += [ "-Wl,--thinlto-jobs=all" ]
 +      }
  
