@@ -9,10 +9,3 @@
      defined(OS_FUCHSIA)
    struct timespec ts;
    int res = clock_gettime(CLOCK_BOOTTIME, &ts);
-@@ -22,4 +22,4 @@ int64_t TraceBootTicksNow() {
-   return TRACE_TIME_TICKS_NOW().since_origin().InNanoseconds();
- }
- 
--}  // namespace tracing
-\ No newline at end of file
-+}  // namespace tracing
