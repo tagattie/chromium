@@ -71,7 +71,8 @@ USES=		bison compiler:c++17-lang cpe desktop-file-utils dos2unix gl gnome jpeg l
 
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
-DOS2UNIX_FILES=	third_party/skia/third_party/vulkanmemoryallocator/include/vk_mem_alloc.h
+DOS2UNIX_FILES=	third_party/skia/third_party/vulkanmemoryallocator/include/vk_mem_alloc.h \
+		third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
 USE_GL=		gbm gl
 USE_GNOME=	atk dconf glib20 gtk30 libxml2 libxslt
 INSTALLS_ICONS=	yes

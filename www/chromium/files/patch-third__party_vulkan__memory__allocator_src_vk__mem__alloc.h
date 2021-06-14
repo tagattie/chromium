@@ -1,4 +1,4 @@
---- third_party/vulkan_memory_allocator/src/vk_mem_alloc.h.orig	2021-06-11 10:14:52 UTC
+--- third_party/vulkan_memory_allocator/src/vk_mem_alloc.h.orig	2021-06-14 13:18:02 UTC
 +++ third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
 @@ -3946,7 +3946,7 @@ void *vma_aligned_alloc(size_t alignment, size_t size)
  
