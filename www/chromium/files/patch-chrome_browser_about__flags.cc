@@ -36,15 +36,6 @@
      {
          "disable-accelerated-video-encode",
          flag_descriptions::kAcceleratedVideoEncodeName,
-@@ -3386,7 +3386,7 @@ const FeatureEntry kFeatureEntries[] = {
-      FEATURE_VALUE_TYPE(performance_manager::features::kDynamicTcmallocTuning)},
- #endif  // BUILDFLAG(USE_TCMALLOC)
- #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
--#if (defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_ANDROID)) && \
-+#if (defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)) && \
-     !defined(OS_NACL)
-     {"mojo-linux-sharedmem", flag_descriptions::kMojoLinuxChannelSharedMemName,
-      flag_descriptions::kMojoLinuxChannelSharedMemDescription,
 @@ -3439,7 +3439,7 @@ const FeatureEntry kFeatureEntries[] = {
      {"enable-login-detection", flag_descriptions::kEnableLoginDetectionName,
       flag_descriptions::kEnableLoginDetectionDescription, kOsAll,

@@ -1,6 +1,13 @@
---- third_party/pdfium/xfa/fxfa/parser/cxfa_timezoneprovider.cpp.orig	2021-05-12 22:13:44 UTC
+--- third_party/pdfium/xfa/fxfa/parser/cxfa_timezoneprovider.cpp.orig	2021-06-09 22:16:18 UTC
 +++ third_party/pdfium/xfa/fxfa/parser/cxfa_timezoneprovider.cpp
-@@ -12,6 +12,9 @@
+@@ -6,12 +6,16 @@
+ 
+ #include "xfa/fxfa/parser/cxfa_timezoneprovider.h"
+ 
++#include <stdint.h>
+ #include <stdlib.h>
+ #include <time.h>
+ 
  #include "build/build_config.h"
  
  static bool g_bProviderTimeZoneSet = false;
@@ -10,7 +17,7 @@
  
  #if defined(OS_WIN)
  #define TIMEZONE _timezone
-@@ -24,9 +27,21 @@ static bool g_bProviderTimeZoneSet = false;
+@@ -24,9 +28,21 @@ static bool g_bProviderTimeZoneSet = false;
  CXFA_TimeZoneProvider::CXFA_TimeZoneProvider() {
    if (!g_bProviderTimeZoneSet) {
      g_bProviderTimeZoneSet = true;
