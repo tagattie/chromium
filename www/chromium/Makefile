@@ -240,7 +240,7 @@ post-extract-TEST-on:
 	@${MV} ${WRKDIR}/test_fonts ${WRKSRC}/third_party/test_fonts/
 
 post-patch:
-	@${MKDIR} ${WRKSRC}/sanddbox/policy/freebsd
+	@${MKDIR} ${WRKSRC}/sandbox/policy/freebsd
 	@${CP} ${FILESDIR}/dir_reader_freebsd.h ${WRKSRC}/base/files
 	@${CP} ${FILESDIR}/device_info_fetcher_freebsd.h ${WRKSRC}/chrome/browser/enterprise/signals
 	@${CP} ${FILESDIR}/device_info_fetcher_freebsd.cc ${WRKSRC}/chrome/browser/enterprise/signals
