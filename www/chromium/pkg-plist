@@ -12,8 +12,8 @@ bin/chrome
 %%DATADIR%%/locales/am.pak.info
 %%DATADIR%%/locales/ar.pak
 %%DATADIR%%/locales/ar.pak.info
-%%DATADIR%%/locales/ar-XB.pak
-%%DATADIR%%/locales/ar-XB.pak.info
+%%DEBUG%%%%DATADIR%%/locales/ar-XB.pak
+%%DEBUG%%%%DATADIR%%/locales/ar-XB.pak.info
 %%DATADIR%%/locales/bg.pak
 %%DATADIR%%/locales/bg.pak.info
 %%DATADIR%%/locales/bn.pak
@@ -32,8 +32,8 @@ bin/chrome
 %%DATADIR%%/locales/en-GB.pak.info
 %%DATADIR%%/locales/en-US.pak
 %%DATADIR%%/locales/en-US.pak.info
-%%DATADIR%%/locales/en-XA.pak
-%%DATADIR%%/locales/en-XA.pak.info
+%%DEBUG%%%%DATADIR%%/locales/en-XA.pak
+%%DEBUG%%%%DATADIR%%/locales/en-XA.pak.info
 %%DATADIR%%/locales/es-419.pak
 %%DATADIR%%/locales/es-419.pak.info
 %%DATADIR%%/locales/es.pak
