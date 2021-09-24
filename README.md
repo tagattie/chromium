@@ -10,7 +10,7 @@ See
 for a list of all known bugs.
 
 When submitting changes, please adhere to a few guidelines, which comply with
-upstream Chromium guidelines.  This hopefully make it easier to upstream our
+upstream Chromium guidelines.  This hopefully will make it easier to upstream our
 changes if they are ever accepted again and it should make our work useful for
 other projects like OpenBSD.
 
