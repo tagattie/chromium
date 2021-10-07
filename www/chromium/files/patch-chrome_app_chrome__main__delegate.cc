@@ -1,4 +1,4 @@
---- chrome/app/chrome_main_delegate.cc.orig	2021-09-24 04:25:56 UTC
+--- chrome/app/chrome_main_delegate.cc.orig	2021-10-01 01:36:38 UTC
 +++ chrome/app/chrome_main_delegate.cc
 @@ -153,15 +153,17 @@
  #include "v8/include/v8.h"
@@ -83,7 +83,16 @@
      defined(OS_CHROMEOS)
    // Record the startup process creation time on supported platforms. On Android
    // this is recorded in ChromeMainDelegateAndroid.
-@@ -781,7 +783,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -673,6 +675,8 @@ void ChromeMainDelegate::PostFieldTrialInitialization(
+   // not always enabled on Linux/ChromeOS.
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS)
+   bool enable_gwp_asan = crash_reporter::IsCrashpadEnabled();
++#elif defined(OS_BSD)
++  bool enable_gwp_asan = false;
+ #else
+   bool enable_gwp_asan = true;
+ #endif
+@@ -781,7 +785,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
    v8_crashpad_support::SetUp();
  #endif
  
@@ -92,7 +101,7 @@
    if (!crash_reporter::IsCrashpadEnabled()) {
      breakpad::SetFirstChanceExceptionHandler(v8::TryHandleWebAssemblyTrapPosix);
    }
-@@ -794,7 +796,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -794,7 +798,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -101,7 +110,7 @@
    // This will directly exit if the user asked for help.
    HandleHelpSwitches(command_line);
  #endif
-@@ -1005,7 +1007,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1005,7 +1009,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
  
    crash_reporter::InitializeCrashKeys();
  
@@ -110,7 +119,7 @@
    ChromeCrashReporterClient::Create();
  #endif
  
-@@ -1018,7 +1020,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1018,7 +1022,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    child_process_logging::Init();
  #endif
  #if defined(ARCH_CPU_ARM_FAMILY) && \
@@ -119,7 +128,7 @@
    // Create an instance of the CPU class to parse /proc/cpuinfo and cache
    // cpu_brand info.
    base::CPU cpu_info;
-@@ -1136,7 +1138,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1136,7 +1140,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
          locale;
    }
  
@@ -128,7 +137,7 @@
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -1157,7 +1159,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1157,7 +1161,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
      }
  #endif  // defined(OS_ANDROID)
    }
@@ -137,7 +146,7 @@
  
  #if defined(OS_ANDROID)
    CHECK_EQ(base::android::GetLibraryProcessType(),
-@@ -1177,7 +1179,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1177,7 +1181,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
  void ChromeMainDelegate::SandboxInitialized(const std::string& process_type) {
    // Note: If you are adding a new process type below, be sure to adjust the
    // AdjustLinuxOOMScore function too.
@@ -146,7 +155,7 @@
    AdjustLinuxOOMScore(process_type);
  #endif
  #if defined(OS_WIN)
-@@ -1219,7 +1221,7 @@ int ChromeMainDelegate::RunProcess(
+@@ -1219,7 +1223,7 @@ int ChromeMainDelegate::RunProcess(
  
      // This entry is not needed on Linux, where the NaCl loader
      // process is launched via nacl_helper instead.
@@ -155,7 +164,7 @@
      {switches::kNaClLoaderProcess, NaClMain},
  #else
      {"<invalid>", nullptr},  // To avoid constant array of size 0
-@@ -1247,7 +1249,7 @@ void ChromeMainDelegate::ProcessExiting(const std::str
+@@ -1247,7 +1251,7 @@ void ChromeMainDelegate::ProcessExiting(const std::str
  #endif  // !defined(OS_ANDROID)
  }
  
@@ -164,7 +173,7 @@
  void ChromeMainDelegate::ZygoteStarting(
      std::vector<std::unique_ptr<content::ZygoteForkDelegate>>* delegates) {
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -1284,7 +1286,7 @@ void ChromeMainDelegate::ZygoteForked() {
+@@ -1284,7 +1288,7 @@ void ChromeMainDelegate::ZygoteForked() {
    crash_keys::SetCrashKeysFromCommandLine(*command_line);
  }
  

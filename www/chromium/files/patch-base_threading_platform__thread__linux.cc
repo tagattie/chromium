@@ -57,3 +57,14 @@
  
  #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS)
    // For upstream uclamp interface. We try both legacy (schedtune, as done
+@@ -438,7 +442,9 @@ void InitThreading() {}
+ void TerminateOnThread() {}
+ 
+ size_t GetDefaultThreadStackSize(const pthread_attr_t& attributes) {
+-#if !defined(THREAD_SANITIZER)
++#if defined(OS_BSD)
++  return (1 << 23);
++#elif !defined(THREAD_SANITIZER)
+   return 0;
+ #else
+   // ThreadSanitizer bloats the stack heavily. Evidence has been that the

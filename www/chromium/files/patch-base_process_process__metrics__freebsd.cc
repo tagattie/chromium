@@ -44,6 +44,15 @@
  
  // static
  std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
+@@ -37,7 +57,7 @@ double ProcessMetrics::GetPlatformIndependentCPUUsage(
+ }
+ 
+ TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
+-  NOTREACHED();
++  NOTIMPLEMENTED();
+   return TimeDelta();
+ }
+ 
 @@ -68,4 +88,221 @@ size_t GetSystemCommitCharge() {
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
  }

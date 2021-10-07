@@ -110,7 +110,7 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_gnome_keyring=false \
 		use_lld=true \
 		use_sysroot=false \
-		use_system_freetype=true \
+		use_system_freetype=false \
 		use_system_harfbuzz=true \
 		use_system_libjpeg=true \
 		extra_cxxflags="${CXXFLAGS}" \
