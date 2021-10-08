@@ -1,4 +1,4 @@
---- chrome/test/BUILD.gn.orig	2021-09-24 04:26:00 UTC
+--- chrome/test/BUILD.gn.orig	2021-10-08 06:25:42 UTC
 +++ chrome/test/BUILD.gn
 @@ -536,7 +536,7 @@ static_library("test_support") {
      ]
@@ -18,7 +18,7 @@
        sources += [
          "../browser/error_reporting/webui_js_error_reporting_browsertest.cc",
        ]
-@@ -6349,7 +6349,7 @@ test("unit_tests") {
+@@ -6353,7 +6353,7 @@ test("unit_tests") {
      ]
    }
  
@@ -27,7 +27,7 @@
      deps += [ "//chrome/browser/error_reporting:unit_test" ]
    }
  
-@@ -8441,7 +8441,7 @@ test("chrome_app_unittests") {
+@@ -8445,7 +8445,7 @@ test("chrome_app_unittests") {
      "//components/safe_browsing:buildflags",
      "//pdf:pdf_ppapi",
    ]
