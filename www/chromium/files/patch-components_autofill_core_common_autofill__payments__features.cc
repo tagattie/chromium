@@ -1,6 +1,6 @@
---- components/autofill/core/common/autofill_payments_features.cc.orig	2021-09-14 01:51:54 UTC
+--- components/autofill/core/common/autofill_payments_features.cc.orig	2021-12-07 05:33:25 UTC
 +++ components/autofill/core/common/autofill_payments_features.cc
-@@ -178,7 +178,7 @@ bool ShouldShowImprovedUserConsentForCreditCardSave() 
+@@ -189,7 +189,7 @@ bool ShouldShowImprovedUserConsentForCreditCardSave() 
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_APPLE) || \

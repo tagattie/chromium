@@ -1,6 +1,6 @@
---- chrome/test/chromedriver/server/chromedriver_server.cc.orig	2021-04-14 18:40:56 UTC
+--- chrome/test/chromedriver/server/chromedriver_server.cc.orig	2021-12-07 05:33:22 UTC
 +++ chrome/test/chromedriver/server/chromedriver_server.cc
-@@ -286,7 +286,7 @@ int main(int argc, char *argv[]) {
+@@ -291,7 +291,7 @@ int main(int argc, char *argv[]) {
    base::AtExitManager at_exit;
    base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
  

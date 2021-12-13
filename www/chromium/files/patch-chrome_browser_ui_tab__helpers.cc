@@ -1,6 +1,6 @@
---- chrome/browser/ui/tab_helpers.cc.orig	2021-09-24 04:26:00 UTC
+--- chrome/browser/ui/tab_helpers.cc.orig	2021-12-07 05:33:21 UTC
 +++ chrome/browser/ui/tab_helpers.cc
-@@ -158,7 +158,7 @@
+@@ -165,7 +165,7 @@
  #include "chrome/browser/lacros/web_contents_can_go_back_observer.h"
  #endif
  
@@ -9,7 +9,7 @@
      defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  #include "chrome/browser/ui/blocked_content/framebust_block_tab_helper.h"
  #include "chrome/browser/ui/hats/hats_helper.h"
-@@ -426,11 +426,11 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+@@ -446,11 +446,11 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \

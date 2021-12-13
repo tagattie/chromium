@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main_linux.cc.orig	2021-07-19 18:45:08 UTC
+--- chrome/browser/chrome_browser_main_linux.cc.orig	2021-12-07 05:33:19 UTC
 +++ chrome/browser/chrome_browser_main_linux.cc
-@@ -47,7 +47,7 @@ ChromeBrowserMainPartsLinux::~ChromeBrowserMainPartsLi
+@@ -53,7 +53,7 @@ ChromeBrowserMainPartsLinux::~ChromeBrowserMainPartsLi
  }
  
  void ChromeBrowserMainPartsLinux::PreProfileInit() {
@@ -9,7 +9,7 @@
    // Needs to be called after we have chrome::DIR_USER_DATA and
    // g_browser_process.  This happens in PreCreateThreads.
    // base::GetLinuxDistro() will initialize its value if needed.
-@@ -78,7 +78,7 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
+@@ -84,7 +84,7 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
  }
  
  void ChromeBrowserMainPartsLinux::PostCreateMainMessageLoop() {
@@ -18,8 +18,8 @@
    bluez::BluezDBusManager::Initialize(nullptr /* system_bus */);
  #endif
  
-@@ -86,7 +86,7 @@ void ChromeBrowserMainPartsLinux::PostCreateMainMessag
- }
+@@ -110,7 +110,7 @@ void ChromeBrowserMainPartsLinux::PostBrowserStart() {
+ #endif
  
  void ChromeBrowserMainPartsLinux::PostDestroyThreads() {
 -#if !BUILDFLAG(IS_CHROMEOS_ASH)

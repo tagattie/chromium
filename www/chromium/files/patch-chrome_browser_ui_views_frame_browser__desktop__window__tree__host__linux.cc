@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_desktop_window_tree_host_linux.cc.orig	2021-09-24 18:31:35 UTC
+--- chrome/browser/ui/views/frame/browser_desktop_window_tree_host_linux.cc.orig	2021-12-07 05:33:21 UTC
 +++ chrome/browser/ui/views/frame/browser_desktop_window_tree_host_linux.cc
-@@ -146,7 +146,7 @@ bool BrowserDesktopWindowTreeHostLinux::SupportsClient
+@@ -147,7 +147,7 @@ bool BrowserDesktopWindowTreeHostLinux::SupportsClient
  }
  
  void BrowserDesktopWindowTreeHostLinux::UpdateFrameHints() {

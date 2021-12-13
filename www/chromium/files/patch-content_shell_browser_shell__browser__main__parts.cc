@@ -1,6 +1,6 @@
---- content/shell/browser/shell_browser_main_parts.cc.orig	2021-09-14 01:51:57 UTC
+--- content/shell/browser/shell_browser_main_parts.cc.orig	2021-12-07 05:33:29 UTC
 +++ content/shell/browser/shell_browser_main_parts.cc
-@@ -60,7 +60,7 @@
+@@ -61,7 +61,7 @@
  #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  
-@@ -148,7 +148,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
+@@ -149,7 +149,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
  }
  
  int ShellBrowserMainParts::PreEarlyInitialization() {

@@ -1,6 +1,6 @@
---- headless/lib/browser/headless_browser_main_parts.h.orig	2021-07-19 18:45:17 UTC
+--- headless/lib/browser/headless_browser_main_parts.h.orig	2021-12-07 05:33:30 UTC
 +++ headless/lib/browser/headless_browser_main_parts.h
-@@ -44,7 +44,7 @@ class HeadlessBrowserMainParts : public content::Brows
+@@ -50,7 +50,7 @@ class HEADLESS_EXPORT HeadlessBrowserMainParts
  #if defined(OS_MAC)
    void PreCreateMainMessageLoop() override;
  #endif

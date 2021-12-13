@@ -1,6 +1,6 @@
---- chrome/browser/sharing/sharing_device_registration.cc.orig	2021-07-19 18:45:09 UTC
+--- chrome/browser/sharing/sharing_device_registration.cc.orig	2021-12-07 05:33:21 UTC
 +++ chrome/browser/sharing/sharing_device_registration.cc
-@@ -321,7 +321,7 @@ bool SharingDeviceRegistration::IsSmsFetcherSupported(
+@@ -326,7 +326,7 @@ bool SharingDeviceRegistration::IsSmsFetcherSupported(
  }
  
  bool SharingDeviceRegistration::IsRemoteCopySupported() const {

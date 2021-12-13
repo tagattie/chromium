@@ -1,4 +1,4 @@
---- components/feature_engagement/public/event_constants.h.orig	2021-09-24 04:26:03 UTC
+--- components/feature_engagement/public/event_constants.h.orig	2021-12-07 05:33:25 UTC
 +++ components/feature_engagement/public/event_constants.h
 @@ -12,7 +12,7 @@ namespace feature_engagement {
  namespace events {
@@ -9,7 +9,7 @@
      defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  // The user has explicitly opened a new tab via an entry point from inside of
  // Chrome.
-@@ -65,7 +65,7 @@ extern const char kDesktopPwaInstalled[];
+@@ -68,7 +68,7 @@ extern const char kDesktopPwaInstalled[];
  // Omnibox displayed the updated connection security indicator.
  extern const char kUpdatedConnectionSecurityIndicatorDisplayed[];
  

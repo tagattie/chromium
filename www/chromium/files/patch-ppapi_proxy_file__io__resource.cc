@@ -1,4 +1,4 @@
---- ppapi/proxy/file_io_resource.cc.orig	2021-05-12 22:05:58 UTC
+--- ppapi/proxy/file_io_resource.cc.orig	2021-12-07 05:33:33 UTC
 +++ ppapi/proxy/file_io_resource.cc
 @@ -282,17 +282,19 @@ int32_t FileIOResource::Write(int64_t offset,
  
@@ -12,9 +12,9 @@
      if (append) {
        increase = bytes_to_write;
      } else {
--      uint64_t max_offset = offset + bytes_to_write;
+-      max_offset = offset + bytes_to_write;
 -      if (max_offset >
-+      uint64_t _max_offset = offset + bytes_to_write;
++      _max_offset = offset + bytes_to_write;
 +      if (_max_offset >
            static_cast<uint64_t>(std::numeric_limits<int64_t>::max())) {
          return PP_ERROR_FAILED;  // amount calculation would overflow.

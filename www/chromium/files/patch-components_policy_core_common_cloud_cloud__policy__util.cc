@@ -1,4 +1,4 @@
---- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2021-09-14 01:51:55 UTC
+--- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2021-12-07 05:33:26 UTC
 +++ components/policy/core/common/cloud/cloud_policy_util.cc
 @@ -18,7 +18,7 @@
  #include <wincred.h>
@@ -42,12 +42,12 @@
  }
  
  std::string GetOSVersion() {
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_APPLE)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_APPLE) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_APPLE) || \
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_APPLE) || defined(OS_BSD) || \
+     defined(OS_ANDROID)
    return base::SysInfo::OperatingSystemVersion();
  #elif defined(OS_WIN)
-   base::win::OSInfo::VersionNumber version_number =
-@@ -177,7 +181,7 @@ std::string GetOSArchitecture() {
+@@ -176,7 +180,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {

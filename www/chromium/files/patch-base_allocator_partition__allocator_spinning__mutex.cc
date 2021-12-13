@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/spinning_mutex.cc.orig	2021-09-14 01:51:47 UTC
+--- base/allocator/partition_allocator/spinning_mutex.cc.orig	2021-12-07 05:33:15 UTC
 +++ base/allocator/partition_allocator/spinning_mutex.cc
-@@ -20,9 +20,16 @@
+@@ -22,6 +22,13 @@
  #include <unistd.h>
  #endif  // defined(PA_HAS_LINUX_KERNEL)
  
@@ -11,14 +11,19 @@
 +#include <sys/umtx.h>
 +#endif // defined(PA_HAS_FREEBSD_KERNEL)
 +
- namespace base {
- namespace internal {
+ #if !defined(PA_HAS_FAST_MUTEX)
+ #include "base/threading/platform_thread.h"
+ 
+@@ -43,7 +50,7 @@ namespace internal {
+ 
+ #if defined(PA_HAS_FAST_MUTEX)
+ 
 -#if defined(PA_HAS_LINUX_KERNEL)
 +#if defined(PA_HAS_LINUX_KERNEL) || defined(PA_HAS_FREEBSD_KERNEL)
  
  void SpinningMutex::FutexWait() {
    // Save and restore errno.
-@@ -46,8 +53,13 @@ void SpinningMutex::FutexWait() {
+@@ -67,8 +74,13 @@ void SpinningMutex::FutexWait() {
    // |kLockedContended| anymore. Note that even without spurious wakeups, the
    // value of |state_| is not guaranteed when this returns, as another thread
    // may get the lock before we get to run.
@@ -32,7 +37,7 @@
  
    if (err) {
      // These are programming error, check them.
-@@ -59,8 +71,14 @@ void SpinningMutex::FutexWait() {
+@@ -80,8 +92,14 @@ void SpinningMutex::FutexWait() {
  
  void SpinningMutex::FutexWake() {
    int saved_errno = errno;

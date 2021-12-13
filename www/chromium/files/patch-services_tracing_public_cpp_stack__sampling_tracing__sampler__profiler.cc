@@ -1,6 +1,6 @@
---- services/tracing/public/cpp/stack_sampling/tracing_sampler_profiler.cc.orig	2021-09-14 01:52:01 UTC
+--- services/tracing/public/cpp/stack_sampling/tracing_sampler_profiler.cc.orig	2021-12-07 05:33:34 UTC
 +++ services/tracing/public/cpp/stack_sampling/tracing_sampler_profiler.cc
-@@ -596,7 +596,7 @@ void TracingSamplerProfiler::StackProfileWriter::Reset
+@@ -622,7 +622,7 @@ void TracingSamplerProfiler::StackProfileWriter::Reset
  
  // static
  void TracingSamplerProfiler::MangleModuleIDIfNeeded(std::string* module_id) {

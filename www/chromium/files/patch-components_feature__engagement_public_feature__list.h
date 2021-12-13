@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.h.orig	2021-09-24 04:26:03 UTC
+--- components/feature_engagement/public/feature_list.h.orig	2021-12-07 05:33:25 UTC
 +++ components/feature_engagement/public/feature_list.h
-@@ -176,7 +176,7 @@ DEFINE_VARIATION_PARAM(kIPHDiscoverFeedHeaderFeature,
+@@ -189,7 +189,7 @@ DEFINE_VARIATION_PARAM(kIPHDiscoverFeedHeaderFeature,
                         "IPH_DiscoverFeedHeaderMenu");
  #endif  // defined(OS_IOS)
  
@@ -9,7 +9,7 @@
      defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  DEFINE_VARIATION_PARAM(kIPHDesktopTabGroupsNewGroupFeature,
                         "IPH_DesktopTabGroupsNewGroup");
-@@ -196,7 +196,7 @@ DEFINE_VARIATION_PARAM(kIPHDesktopPwaInstallFeature, "
+@@ -213,7 +213,7 @@ DEFINE_VARIATION_PARAM(kIPHDesktopPwaInstallFeature, "
  DEFINE_VARIATION_PARAM(kIPHProfileSwitchFeature, "IPH_ProfileSwitch");
  DEFINE_VARIATION_PARAM(kIPHUpdatedConnectionSecurityIndicatorsFeature,
                         "IPH_UpdatedConnectionSecurityIndicators");
@@ -18,7 +18,7 @@
          // defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  
  }  // namespace
-@@ -284,7 +284,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
+@@ -309,7 +309,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHReadingListMessagesFeature),
          VARIATION_ENTRY(kIPHBadgedTranslateManualTriggerFeature),
          VARIATION_ENTRY(kIPHDiscoverFeedHeaderFeature),
@@ -27,7 +27,7 @@
      defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
          VARIATION_ENTRY(kIPHDesktopTabGroupsNewGroupFeature),
          VARIATION_ENTRY(kIPHFocusModeFeature),
-@@ -299,7 +299,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
+@@ -327,7 +327,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHDesktopPwaInstallFeature),
          VARIATION_ENTRY(kIPHProfileSwitchFeature),
          VARIATION_ENTRY(kIPHUpdatedConnectionSecurityIndicatorsFeature),

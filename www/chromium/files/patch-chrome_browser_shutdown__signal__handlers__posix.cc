@@ -1,6 +1,6 @@
---- chrome/browser/shutdown_signal_handlers_posix.cc.orig	2021-10-07 15:08:14 UTC
+--- chrome/browser/shutdown_signal_handlers_posix.cc.orig	2021-12-07 05:33:21 UTC
 +++ chrome/browser/shutdown_signal_handlers_posix.cc
-@@ -186,7 +186,11 @@ void InstallShutdownSignalHandlers(
+@@ -188,7 +188,11 @@ void InstallShutdownSignalHandlers(
    g_pipe_pid = getpid();
    g_shutdown_pipe_read_fd = pipefd[0];
    g_shutdown_pipe_write_fd = pipefd[1];
