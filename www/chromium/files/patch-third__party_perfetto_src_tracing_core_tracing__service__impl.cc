@@ -1,4 +1,4 @@
---- third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig	2021-09-14 01:58:28 UTC
+--- third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig	2021-12-14 11:47:12 UTC
 +++ third_party/perfetto/src/tracing/core/tracing_service_impl.cc
 @@ -44,7 +44,8 @@
  
@@ -10,7 +10,7 @@
  #define PERFETTO_HAS_CHMOD
  #include <sys/stat.h>
  #endif
-@@ -2872,8 +2873,9 @@ bool TracingServiceImpl::SnapshotClocks(
+@@ -2896,8 +2897,9 @@ bool TracingServiceImpl::SnapshotClocks(
  
    TracingSession::ClockSnapshotData new_snapshot_data;
  

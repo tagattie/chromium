@@ -1,8 +1,17 @@
---- chrome/common/chrome_features.cc.orig	2021-09-24 04:26:00 UTC
+--- chrome/common/chrome_features.cc.orig	2021-12-14 11:45:00 UTC
 +++ chrome/common/chrome_features.cc
-@@ -82,13 +82,13 @@ const base::Feature kAsyncDns {
+@@ -93,7 +93,7 @@ const base::Feature kAsyncDns {
  #endif
  };
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) || \
+     defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
+ // Enables or disables the Autofill survey triggered by opening a prompt to
+ // save address info.
+@@ -109,13 +109,13 @@ const base::Feature kAutofillPasswordSurvey{"AutofillP
+                                             base::FEATURE_DISABLED_BY_DEFAULT};
+ #endif
  
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
@@ -16,7 +25,7 @@
  
  #if BUILDFLAG(IS_CHROMEOS_ASH)
  // Enable Borealis on Chrome OS.
-@@ -99,13 +99,13 @@ const base::Feature kBorealis{"Borealis", base::FEATUR
+@@ -131,13 +131,13 @@ const base::Feature kBrowserAppInstanceTracking{
  const base::Feature kChangePictureVideoMode{"ChangePictureVideoMode",
                                              base::FEATURE_ENABLED_BY_DEFAULT};
  
@@ -30,9 +39,9 @@
 -#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
 +#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
  
- #if defined(OS_WIN)
- const base::Feature kChromeCleanupScanCompletedNotification{
-@@ -216,12 +216,12 @@ const base::Feature kDefaultPinnedAppsUpdate2021Q2{
+ const base::Feature kClientStorageAccessContextAuditing{
+     "ClientStorageAccessContextAuditing", base::FEATURE_DISABLED_BY_DEFAULT};
+@@ -242,7 +242,7 @@ const base::Feature kDefaultPinnedAppsUpdate2021Q2{
      "DefaultPinnedAppsUpdate2021Q2", base::FEATURE_ENABLED_BY_DEFAULT};
  #endif
  
@@ -41,13 +50,7 @@
  // Enables Desktop PWAs shortcuts menu to be visible and executable in ChromeOS,
  // MacOS and Linux.
  const base::Feature kDesktopPWAsAppIconShortcutsMenuUI{
-   "DesktopPWAsAppIconShortcutsMenuUI",
--#if defined(OS_MAC) || defined(OS_LINUX)
-+#if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
-       base::FEATURE_DISABLED_BY_DEFAULT
- #else
-       base::FEATURE_ENABLED_BY_DEFAULT
-@@ -273,7 +273,7 @@ const base::Feature kDesktopPWAsNotificationIconAndTit
+@@ -294,7 +294,7 @@ const base::Feature kDesktopPWAsNotificationIconAndTit
  // Enables or disables Desktop PWAs to be auto-started on OS login.
  const base::Feature kDesktopPWAsRunOnOsLogin {
    "DesktopPWAsRunOnOsLogin",
@@ -56,7 +59,25 @@
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -558,7 +558,7 @@ const base::Feature kIncognitoReauthenticationForAndro
+@@ -324,7 +324,7 @@ const base::Feature kDesktopPWAsWebBundles{"DesktopPWA
+ const base::Feature kDnsOverHttps {
+   "DnsOverHttps",
+ #if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
+-    defined(OS_ANDROID) || defined(OS_LINUX)
++    defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+       base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+       base::FEATURE_DISABLED_BY_DEFAULT
+@@ -346,7 +346,7 @@ const base::FeatureParam<bool> kDnsOverHttpsFallbackPa
+ const base::FeatureParam<bool> kDnsOverHttpsShowUiParam {
+   &kDnsOverHttps, "ShowUi",
+ #if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
+-    defined(OS_ANDROID) || defined(OS_LINUX)
++    defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+       true
+ #else
+       false
+@@ -602,7 +602,7 @@ const base::Feature kIncognitoBrandConsistencyForAndro
  const base::Feature kIncognitoNtpRevamp{"IncognitoNtpRevamp",
                                          base::FEATURE_DISABLED_BY_DEFAULT};
  

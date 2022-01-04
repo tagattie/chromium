@@ -1,6 +1,6 @@
---- weblayer/app/content_main_delegate_impl.cc.orig	2021-09-24 04:26:39 UTC
+--- weblayer/app/content_main_delegate_impl.cc.orig	2021-12-14 11:45:40 UTC
 +++ weblayer/app/content_main_delegate_impl.cc
-@@ -255,8 +255,8 @@ ContentMainDelegateImpl::CreateVariationsIdsProvider()
+@@ -249,8 +249,8 @@ ContentMainDelegateImpl::CreateVariationsIdsProvider()
  void ContentMainDelegateImpl::PreSandboxStartup() {
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

@@ -1,6 +1,6 @@
---- components/BUILD.gn.orig	2021-09-24 04:26:02 UTC
+--- components/BUILD.gn.orig	2021-12-14 11:45:02 UTC
 +++ components/BUILD.gn
-@@ -360,6 +360,13 @@ test("components_unittests") {
+@@ -366,6 +366,13 @@ test("components_unittests") {
        ]
      }
  

@@ -1,6 +1,6 @@
---- services/network/network_context.cc.orig	2021-09-24 04:26:09 UTC
+--- services/network/network_context.cc.orig	2021-12-14 11:45:09 UTC
 +++ services/network/network_context.cc
-@@ -2384,7 +2384,7 @@ NetworkContext::MakeSessionCleanupCookieStore() const 
+@@ -2487,7 +2487,7 @@ NetworkContext::MakeSessionCleanupCookieStore() const 
  
    net::CookieCryptoDelegate* crypto_delegate = nullptr;
    if (params_->enable_encrypted_cookies) {

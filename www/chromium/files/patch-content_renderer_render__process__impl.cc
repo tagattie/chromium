@@ -1,4 +1,4 @@
---- content/renderer/render_process_impl.cc.orig	2021-09-24 04:26:06 UTC
+--- content/renderer/render_process_impl.cc.orig	2021-12-14 11:45:05 UTC
 +++ content/renderer/render_process_impl.cc
 @@ -48,7 +48,7 @@
  #if defined(OS_WIN)
@@ -24,7 +24,7 @@
          // defined(ARCH_CPU_X86_64)
  
    SetV8FlagIfFeature(features::kWebAssemblyLazyCompilation,
-@@ -228,7 +228,7 @@ RenderProcessImpl::RenderProcessImpl()
+@@ -230,7 +230,7 @@ RenderProcessImpl::RenderProcessImpl()
    SetV8FlagIfFeature(features::kWebAssemblyTiering, "--wasm-tier-up");
    SetV8FlagIfNotFeature(features::kWebAssemblyTiering, "--no-wasm-tier-up");
  

@@ -1,8 +1,8 @@
---- chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc.orig	2021-09-24 18:20:01 UTC
+--- chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc.orig	2021-12-14 11:44:58 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc
-@@ -13,9 +13,9 @@
- #include "components/keyed_service/content/browser_context_dependency_manager.h"
+@@ -17,9 +17,9 @@
  #include "components/keyed_service/core/keyed_service.h"
+ #include "components/policy/content/policy_blocklist_service.h"
  #include "content/public/browser/browser_context.h"
 -#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC)
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD)

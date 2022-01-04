@@ -1,7 +1,7 @@
---- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2021-09-24 04:26:00 UTC
+--- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2021-12-14 11:44:59 UTC
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
-@@ -131,7 +131,7 @@
- #include "chrome/browser/ui/startup/web_app_protocol_handling_startup_utils.h"
+@@ -125,7 +125,7 @@
+ #endif  // defined(OS_WIN)
  
  #if defined(OS_WIN) || defined(OS_MAC) || \
 -    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/startup/web_app_url_handling_startup_utils.h"
  #endif
  
-@@ -470,7 +470,7 @@ bool MaybeLaunchApplication(
+@@ -478,7 +478,7 @@ bool MaybeLaunchApplication(
    return false;
  }
  
@@ -27,7 +27,7 @@
      // If Chrome Apps are deprecated and |app_id| is a Chrome App, display the
      // deprecation UI instead of launching the app.
      if (apps::OpenDeprecatedApplicationPrompt(privacy_safe_profile, app_id))
-@@ -1175,7 +1175,7 @@ bool StartupBrowserCreator::StartupLaunchAfterProtocol
+@@ -1184,7 +1184,7 @@ bool StartupBrowserCreator::ContinueProcessingCommandL
    }
  
    // Web app URL handling.

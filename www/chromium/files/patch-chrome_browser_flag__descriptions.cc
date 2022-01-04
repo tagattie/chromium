@@ -1,6 +1,6 @@
---- chrome/browser/flag_descriptions.cc.orig	2021-09-24 04:25:58 UTC
+--- chrome/browser/flag_descriptions.cc.orig	2021-12-14 11:44:58 UTC
 +++ chrome/browser/flag_descriptions.cc
-@@ -5110,7 +5110,7 @@ const char kDownloadShelfWebUIDescription[] =
+@@ -5270,7 +5270,7 @@ const char kDownloadShelfWebUIDescription[] =
  
  // Random platform combinations -----------------------------------------------
  
@@ -8,8 +8,8 @@
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) || \
      defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  
- const char kEnableOopPrintDriversName[] =
-@@ -5134,10 +5134,10 @@ const char kSettingsLandingPageRedesignDescription[] =
+ const char kWebUIBrandingUpdateName[] = "WebUI Branding Update";
+@@ -5288,10 +5288,10 @@ const char kSettingsLandingPageRedesignDescription[] =
      "Changes the layout of the chrome://settings page to only show one section "
      "at a time.";
  
@@ -22,7 +22,7 @@
  
  const char kCommanderName[] = "Commander";
  const char kCommanderDescription[] =
-@@ -5153,7 +5153,7 @@ const char kDesktopDetailedLanguageSettingsName[] =
+@@ -5307,7 +5307,7 @@ const char kDesktopDetailedLanguageSettingsName[] =
  const char kDesktopDetailedLanguageSettingsDescription[] =
      "Enable the new detailed language settings page";
  
@@ -31,21 +31,7 @@
  
  #if defined(OS_CHROMEOS) || defined(OS_LINUX)
  #if BUILDFLAG(USE_TCMALLOC)
-@@ -5178,11 +5178,11 @@ const char kWebShareDescription[] =
-     "platforms.";
- #endif  // defined(OS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_MAC)
- 
--#if defined(OS_LINUX) && defined(USE_OZONE)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && defined(USE_OZONE)
- const char kUseOzonePlatformName[] = "Use ozone.";
- const char kUseOzonePlatformDescription[] =
-     "Use the Ozone/X11 platform implementation on X11.";
--#endif  // defined(OS_LINUX) && defined(USE_OZONE)
-+#endif  // (defined(OS_LINUX) || defined(OS_BSD)) && defined(USE_OZONE)
- 
- // Feature flags --------------------------------------------------------------
- 
-@@ -5249,7 +5249,7 @@ const char kAutofillCreditCardUploadDescription[] =
+@@ -5421,7 +5421,7 @@ const char kAutofillCreditCardUploadDescription[] =
  
  #endif  // defined(TOOLKIT_VIEWS) || defined(OS_ANDROID)
  
@@ -54,7 +40,7 @@
  const char kSendWebUIJavaScriptErrorReportsName[] =
      "Send WebUI JavaScript Error Reports";
  const char kSendWebUIJavaScriptErrorReportsDescription[] =
-@@ -5264,7 +5264,7 @@ const char kElasticOverscrollDescription[] =
+@@ -5436,7 +5436,7 @@ const char kElasticOverscrollDescription[] =
      "Enables Elastic Overscrolling on touchscreens and precision touchpads.";
  #endif  // defined(OS_WIN) || defined(OS_ANDROID)
  

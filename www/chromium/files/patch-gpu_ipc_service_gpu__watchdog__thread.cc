@@ -1,4 +1,4 @@
---- gpu/ipc/service/gpu_watchdog_thread.cc.orig	2021-09-24 04:26:07 UTC
+--- gpu/ipc/service/gpu_watchdog_thread.cc.orig	2021-12-14 11:45:06 UTC
 +++ gpu/ipc/service/gpu_watchdog_thread.cc
 @@ -91,7 +91,7 @@ GpuWatchdogThread::GpuWatchdogThread(base::TimeDelta t
    }
@@ -27,7 +27,7 @@
    UpdateActiveTTY();
  #endif
  
-@@ -803,7 +803,7 @@ bool GpuWatchdogThread::WithinOneMinFromForegrounded()
+@@ -740,7 +740,7 @@ bool GpuWatchdogThread::WithinOneMinFromForegrounded()
    return foregrounded_event_ && num_of_timeout_after_foregrounded_ <= count;
  }
  
@@ -36,7 +36,7 @@
  void GpuWatchdogThread::UpdateActiveTTY() {
    last_active_tty_ = active_tty_;
  
-@@ -820,7 +820,7 @@ void GpuWatchdogThread::UpdateActiveTTY() {
+@@ -757,7 +757,7 @@ void GpuWatchdogThread::UpdateActiveTTY() {
  #endif
  
  bool GpuWatchdogThread::ContinueOnNonHostX11ServerTty() {
