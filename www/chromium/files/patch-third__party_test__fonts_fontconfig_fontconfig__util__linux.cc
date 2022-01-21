@@ -1,5 +1,5 @@
---- third_party/test_fonts/fontconfig_util_linux.cc.orig	2021-12-17 13:14:22 UTC
-+++ third_party/test_fonts/fontconfig_util_linux.cc
+--- third_party/test_fonts/fontconfig/fontconfig_util_linux.cc.orig	2021-12-31 00:58:30 UTC
++++ third_party/test_fonts/fontconfig/fontconfig_util_linux.cc
 @@ -12,11 +12,24 @@
  #include <climits>
  #include <string>

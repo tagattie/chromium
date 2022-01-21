@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/web_app_utils.cc.orig	2021-12-14 11:45:00 UTC
+--- chrome/browser/web_applications/web_app_utils.cc.orig	2021-12-31 00:57:25 UTC
 +++ chrome/browser/web_applications/web_app_utils.cc
-@@ -227,13 +227,13 @@ std::u16string GetFileTypeAssociationsHandledByWebApps
+@@ -236,13 +236,13 @@ std::u16string GetFileTypeAssociationsHandledByWebApps
    const apps::FileHandlers file_handlers =
        GetFileHandlersForAllWebAppsWithOrigin(profile, url);
    std::vector<std::string> associations;
@@ -16,7 +16,7 @@
    std::set<std::string> extensions_set =
        apps::GetFileExtensionsFromFileHandlers(file_handlers);
    associations.reserve(extensions_set.size());
-@@ -244,7 +244,7 @@ std::u16string GetFileTypeAssociationsHandledByWebApps
+@@ -253,7 +253,7 @@ std::u16string GetFileTypeAssociationsHandledByWebApps
                   [](const std::string& extension) {
                     return base::ToUpperASCII(extension.substr(1));
                   });
