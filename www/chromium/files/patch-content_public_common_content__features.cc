@@ -1,4 +1,4 @@
---- content/public/common/content_features.cc.orig	2021-12-31 00:57:32 UTC
+--- content/public/common/content_features.cc.orig	2022-01-20 10:35:57 UTC
 +++ content/public/common/content_features.cc
 @@ -51,7 +51,7 @@ const base::Feature kAudioServiceOutOfProcess {
  // TODO(crbug.com/1052397): Remove !IS_CHROMEOS_LACROS once lacros starts being
@@ -9,7 +9,7 @@
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -920,13 +920,13 @@ const base::Feature kWebAssemblyBaseline{"WebAssemblyB
+@@ -934,13 +934,13 @@ const base::Feature kWebAssemblyBaseline{"WebAssemblyB
  const base::Feature kWebAssemblyCodeProtection{
      "WebAssemblyCodeProtection", base::FEATURE_DISABLED_BY_DEFAULT};
  
@@ -25,7 +25,7 @@
          // defined(ARCH_CPU_X86_64)
  
  // Enable WebAssembly lazy compilation (JIT on first call).
-@@ -945,7 +945,7 @@ const base::Feature kWebAssemblyTiering{"WebAssemblyTi
+@@ -959,7 +959,7 @@ const base::Feature kWebAssemblyTiering{"WebAssemblyTi
  // Enable WebAssembly trap handler.
  const base::Feature kWebAssemblyTrapHandler {
    "WebAssemblyTrapHandler",
@@ -34,7 +34,7 @@
        defined(OS_MAC)) &&                                             \
       defined(ARCH_CPU_X86_64)) ||                                     \
      (defined(OS_MAC) && defined(ARCH_CPU_ARM64))
-@@ -973,7 +973,7 @@ const base::Feature kWebAuthCable {
+@@ -987,7 +987,7 @@ const base::Feature kWebAuthCable {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  // If updating this, also update kWebAuthCableServerLink.
@@ -43,7 +43,7 @@
        base::FEATURE_DISABLED_BY_DEFAULT
  #else
        base::FEATURE_ENABLED_BY_DEFAULT
-@@ -1132,7 +1132,7 @@ const base::Feature kRetryGetVideoCaptureDeviceInfos{
+@@ -1146,7 +1146,7 @@ const base::Feature kRetryGetVideoCaptureDeviceInfos{
  
  #endif  // defined(OS_MAC)
  

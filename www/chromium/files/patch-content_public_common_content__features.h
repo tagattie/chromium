@@ -1,6 +1,6 @@
---- content/public/common/content_features.h.orig	2021-12-31 00:57:32 UTC
+--- content/public/common/content_features.h.orig	2022-01-20 10:35:57 UTC
 +++ content/public/common/content_features.h
-@@ -239,9 +239,9 @@ CONTENT_EXPORT extern const base::Feature
+@@ -240,9 +240,9 @@ CONTENT_EXPORT extern const base::Feature
  CONTENT_EXPORT extern const base::Feature kWebAppWindowControlsOverlay;
  CONTENT_EXPORT extern const base::Feature kWebAssemblyBaseline;
  CONTENT_EXPORT extern const base::Feature kWebAssemblyCodeProtection;
@@ -12,7 +12,7 @@
          // defined(ARCH_CPU_X86_64)
  CONTENT_EXPORT extern const base::Feature kWebAssemblyLazyCompilation;
  CONTENT_EXPORT extern const base::Feature kWebAssemblySimd;
-@@ -295,13 +295,13 @@ CONTENT_EXPORT extern const base::Feature kMacSyscallS
+@@ -296,13 +296,13 @@ CONTENT_EXPORT extern const base::Feature kMacSyscallS
  CONTENT_EXPORT extern const base::Feature kRetryGetVideoCaptureDeviceInfos;
  #endif  // defined(OS_MAC)
  
