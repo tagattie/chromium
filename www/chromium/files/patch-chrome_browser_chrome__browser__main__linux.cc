@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_main_linux.cc.orig	2021-12-31 00:57:22 UTC
+--- chrome/browser/chrome_browser_main_linux.cc.orig	2022-01-20 10:35:49 UTC
 +++ chrome/browser/chrome_browser_main_linux.cc
 @@ -30,7 +30,7 @@
  #include "chrome/installer/util/google_update_settings.h"
@@ -9,15 +9,6 @@
  #include "chrome/browser/dbus_memory_pressure_evaluator_linux.h"
  #endif
  
-@@ -53,7 +53,7 @@ ChromeBrowserMainPartsLinux::~ChromeBrowserMainPartsLi
- }
- 
- void ChromeBrowserMainPartsLinux::PreProfileInit() {
--#if !BUILDFLAG(IS_CHROMEOS_ASH)
-+#if !BUILDFLAG(IS_CHROMEOS_ASH) && !defined(OS_BSD)
-   // Needs to be called after we have chrome::DIR_USER_DATA and
-   // g_browser_process.  This happens in PreCreateThreads.
-   // base::GetLinuxDistro() will initialize its value if needed.
 @@ -82,14 +82,14 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
  }
  

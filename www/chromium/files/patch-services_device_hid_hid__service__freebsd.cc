@@ -1,4 +1,4 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2022-01-21 05:14:48 UTC
+--- services/device/hid/hid_service_freebsd.cc.orig	2022-01-23 04:47:18 UTC
 +++ services/device/hid/hid_service_freebsd.cc
 @@ -0,0 +1,397 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
@@ -272,7 +272,7 @@
 +          // Do not re-add to checks
 +          if (permissions_checks_attempts_.find(device_name) == permissions_checks_attempts_.end()) {
 +            permissions_checks_attempts_.insert(std::pair<std::string, int>(device_name, kMaxPermissionChecks));
-+            timer_->Start(FROM_HERE, base::TimeDelta::FromTimeSpec({1}),
++            timer_->Start(FROM_HERE, base::TimeDelta::FromTimeSpec({1, 0}),
 +                          this, &BlockingTaskRunnerHelper::CheckPendingPermissionChange);
 +          }
 +        }
